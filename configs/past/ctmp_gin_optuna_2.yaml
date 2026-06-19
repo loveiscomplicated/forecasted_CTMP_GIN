@@ -1,0 +1,47 @@
+device: null # if null, it automatically sets the available device. (cuda | mps | cpu)
+
+edge:
+  is_mi_based: True # if 0, it generates fully connected edge index.
+  n_neighbors: 7
+  top_k: 9
+  threshold: 0.01
+  pruning_ratio: 0.7
+  return_edge_attr: False # CAUTION: potential error when set to True
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 3
+    gin_hidden_channel_2: 96 # Must match the first GIN's dimensions to avoid errors; 
+                             # otherwise, a projection layer is required.
+    gin_2_layers: 3
+    train_eps: False
+    los_embedding_dim: 4
+    gate_hidden_ch: 128 # Hidden_dim of GatedFusion, If set to None, it defaults to in_dim, which is gin_hidden_channel * 3
+    dropout_p: 0.018503542107251567
+    readout_mode: "concat"  # "concat" | "sum" | "last"
+
+train:
+  batch_size: 256
+  learning_rate: 0.0002000054566973331 # optimizer learning rate
+  epochs: 100 # 원래 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 4
+  optimizer: "adamw"
+  weight_decay: 1.0482209742775742e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10 # 원래 10
+  decision_threshold: 0.5
+
+  ig_label: False # include Neutral labels for Integrated Gradients Method
+                  # Must set to False except using Integrated Gradients
+  cv: True
+  n_folds: 5
+  

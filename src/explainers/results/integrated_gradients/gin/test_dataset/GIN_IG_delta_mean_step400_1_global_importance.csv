@@ -1,0 +1,2 @@
+idx,name,mean,std,mean_minus_std,mean_plus_std,cv,rank_mean
+0,delta,0.007995951920747757,0.0,0.007995951920747757,0.007995951920747757,0.0,1

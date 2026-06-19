@@ -1,0 +1,74 @@
+device: null
+
+run_name: ctmp_gin_joint_fresh_id1
+
+joint_forecast_pipeline:
+  enabled: true
+  stage1:
+    train:
+      batch_size: 1024
+      learning_rate: 0.001
+      epochs: 50
+      num_workers: 4
+      optimizer: "adamw"
+      weight_decay: 1.0e-05
+      lr_scheduler_patience: 5
+      early_stopping_patience: 5
+      do_preprocess: False
+    joint_predictor:
+      joint_direction: los_to_d
+      condition_mode: predicted
+      detach_condition: true
+      los_target_mode: coarse
+      lambda_los: 1.0
+      lambda_aux: 0.3
+      lambda_joint: 0.0
+      joint_heads: SERVICES_D,FREQ_ATND_SELF_HELP_D,SUB1_D
+  joint_forecast_input:
+    mode: distribution
+
+edge:
+  is_mi_based: True
+  n_neighbors: 3
+  top_k: 9
+  threshold: 0.02
+  pruning_ratio: 0.5
+  return_edge_attr: False
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    forecast_input_encoder: distribution
+    distribution_encoder_hidden_dim: 64
+    distribution_encoder_out_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 96
+    gin_2_layers: 2
+    train_eps: True
+    los_embedding_dim: 4
+    gate_hidden_ch: 64
+    dropout_p: 0.1242026370635674
+    readout_mode: "concat"
+
+train:
+  batch_size: 512
+  learning_rate: 0.0006103193737231391
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.2
+  num_workers: 4
+  optimizer: "adam"
+  weight_decay: 1.1058007626429544e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  ig_label: False
+  do_preprocess: False
+  cv: True
+  n_folds: 5

@@ -1,0 +1,86 @@
+device: null
+
+run_name: ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001
+
+joint_forecast_pipeline:
+  enabled: true
+  stage1:
+    train:
+      batch_size: 1024
+      learning_rate: 0.001
+      epochs: 50
+      num_workers: 4
+      optimizer: "adamw"
+      weight_decay: 1.0e-05
+      lr_scheduler_patience: 5
+      early_stopping_patience: 5
+      do_preprocess: false
+    joint_predictor:
+      predictor_type: joint_consistent
+      joint_direction: d_to_los
+      condition_mode: predicted
+      detach_condition: false
+      los_target_mode: coarse
+      lambda_los: 1.0
+      lambda_aux: 0.3
+      lambda_joint: 0.3
+      joint_heads: new_dvD_top6
+    joint_struct_loss:
+      enabled: true
+      lambda_struct: 0.01
+      loss_type: soft_js_d
+      risk_head_set: new_dvD_top6
+      stopgrad_los: true
+      min_los_support: 1.0e-06
+      eps: 1.0e-08
+      weight_by_los_support: true
+      use_ema: false
+      ema_momentum: 0.95
+  joint_forecast_input:
+    mode: distribution
+
+edge:
+  is_mi_based: true
+  n_neighbors: 3
+  top_k: 9
+  threshold: 0.02
+  pruning_ratio: 0.5
+  return_edge_attr: false
+  mi_cached: false
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    forecast_input_encoder: distribution
+    distribution_encoder_hidden_dim: 64
+    distribution_encoder_out_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 96
+    gin_2_layers: 2
+    train_eps: true
+    los_embedding_dim: 4
+    gate_hidden_ch: 64
+    dropout_p: 0.1242026370635674
+    readout_mode: "concat"
+
+train:
+  batch_size: 512
+  learning_rate: 0.0006103193737231391
+  epochs: 100
+  seed: 1
+  binary: true
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.2
+  num_workers: 4
+  optimizer: "adam"
+  weight_decay: 1.1058007626429544e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  ig_label: false
+  do_preprocess: false
+  cv: true
+  n_folds: 5

@@ -1,0 +1,48 @@
+device: null
+
+run_name: los_coarse_hybrid_ce_ordinal_w1
+los_target_mode: coarse
+num_classes: 6
+los_bins:
+  - [1, 1]
+  - [2, 7]
+  - [8, 14]
+  - [15, 21]
+  - [22, 28]
+  - [29, 37]
+
+model:
+  name: los_ordinal_predictor
+  params:
+    embedding_dim: 32
+    hidden_dim: 512
+    num_layers: 4
+    dropout_p: 0.2
+
+loss:
+  type: hybrid_ce_ordinal
+  use_pos_weight: true
+  pos_weight_clip: 10.0
+  ce_weight: 0.3
+
+calibration:
+  enabled: false
+  export_val_predictions: false
+  export_test_predictions: true
+
+train:
+  batch_size: 1024
+  learning_rate: 1.0e-3
+  epochs: 50
+  seed: 1
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 6
+  optimizer: adamw
+  weight_decay: 1.0e-5
+  monitor_metric: valid_macro_f1
+  monitor_mode: max
+  do_preprocess: false

@@ -1,0 +1,427 @@
+        ig_main(
+            dataset=dataset,
+            dataloader=test_loader,
+            model=model,
+            save_path=save_path,
+            edge_index=edge_index,
+            target="logit",
+            n_steps=400,
+            reduce="mean",
+            keep_all=True,
+            max_batches=None,
+            verbose=True,
+            sample_ratio=1,
+        )
+
+=== Top 20 (mean ± std) ===
+ idx      name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+  19 ARRESTS_D 0.036478  0.0        0.036478       0.036478 0.0          1
+  67  DIVISION 0.029536  0.0        0.029536       0.029536 0.0          2
+  20   DSMCRIT 0.027374  0.0        0.027374       0.027374 0.0          3
+  68    REGION 0.026365  0.0        0.026365       0.026365 0.0          4
+  39   FREQ1_D 0.026323  0.0        0.026323       0.026323 0.0          5
+  18 LIVARAG_D 0.025897  0.0        0.025897       0.025897 0.0          6
+   6   NOPRIOR 0.025451  0.0        0.025451       0.025451 0.0          7
+  32    SUB3_D 0.025301  0.0        0.025301       0.025301 0.0          8
+  52    HERFLG 0.023769  0.0        0.023769       0.023769 0.0          9
+  31    SUB2_D 0.023664  0.0        0.023664       0.023664 0.0         10
+  41   FREQ3_D 0.023661  0.0        0.023661       0.023661 0.0         11
+  71  CBSA2020 0.020921  0.0        0.020921       0.020921 0.0         12
+  54  OPSYNFLG 0.020062  0.0        0.020062       0.020062 0.0         13
+  12    GENDER 0.019628  0.0        0.019628       0.019628 0.0         14
+  63  SEDHPFLG 0.018487  0.0        0.018487       0.018487 0.0         15
+  61   TRNQFLG 0.018459  0.0        0.018459       0.018459 0.0         16
+  42  FRSTUSE1 0.017653  0.0        0.017653       0.017653 0.0         17
+  17  EMPLOY_D 0.017444  0.0        0.017444       0.017444 0.0         18
+  25  DETNLF_D 0.016940  0.0        0.016940       0.016940 0.0         19
+   2   MARSTAT 0.016918  0.0        0.016918       0.016918 0.0         20
+
+=== Bottom 20 (mean ± std) ===
+ idx                name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+  53             METHFLG 0.009267  0.0        0.009267       0.009267 0.0         53
+  30              SUB1_D 0.009149  0.0        0.009149       0.009149 0.0         54
+  33              ROUTE1 0.007776  0.0        0.007776       0.007776 0.0         55
+  21                 AGE 0.007568  0.0        0.007568       0.007568 0.0         56
+  50             COKEFLG 0.007484  0.0        0.007484       0.007484 0.0         57
+  37               FREQ2 0.006452  0.0        0.006452       0.006452 0.0         58
+  24              DETNLF 0.006390  0.0        0.006390       0.006390 0.0         59
+  45             HLTHINS 0.006093  0.0        0.006093       0.006093 0.0         60
+  14             LIVARAG 0.006083  0.0        0.006083       0.006083 0.0         61
+  26             PRIMINC 0.004717  0.0        0.004717       0.004717 0.0         62
+  46             PRIMPAY 0.004353  0.0        0.004353       0.004353 0.0         63
+   7             ARRESTS 0.004345  0.0        0.004345       0.004345 0.0         64
+   8              EMPLOY 0.004009  0.0        0.004009       0.004009 0.0         65
+  38               FREQ3 0.003948  0.0        0.003948       0.003948 0.0         66
+  36               FREQ1 0.003366  0.0        0.003366       0.003366 0.0         67
+  27                SUB1 0.003097  0.0        0.003097       0.003097 0.0         68
+  28                SUB2 0.002116  0.0        0.002116       0.002116 0.0         69
+  47 FREQ_ATND_SELF_HELP 0.001910  0.0        0.001910       0.001910 0.0         70
+  29                SUB3 0.001591  0.0        0.001591       0.001591 0.0         71
+  15             DAYWAIT 0.001169  0.0        0.001169       0.001169 0.0         72
+
+=== Stability Report ===
+Spearman avg: 0.0000
+Spearman pairs: []
+
+Top-k overlap/Jaccard (pairwise):
+  k=10
+  k=20
+  k=30
+
+Top-k averages:
+  k=10 overlap_avg=0.000  jaccard_avg=0.000
+  k=20 overlap_avg=0.000  jaccard_avg=0.000
+  k=30 overlap_avg=0.000  jaccard_avg=0.000
+
+=== Unstable Variables Report (Top-20, seeds=1) ===
+Stable in Top-20 (appear in all seeds): 20
+Unstable in Top-20 (appear in some seeds): 0
+
+[Stable-in-TopK]
+    2 | MARSTAT
+    6 | NOPRIOR
+   12 | GENDER
+   17 | EMPLOY_D
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   25 | DETNLF_D
+   31 | SUB2_D
+   32 | SUB3_D
+   39 | FREQ1_D
+   41 | FREQ3_D
+   42 | FRSTUSE1
+   52 | HERFLG
+   54 | OPSYNFLG
+   61 | TRNQFLG
+   63 | SEDHPFLG
+   67 | DIVISION
+   68 | REGION
+   71 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+
+[Most rank-unstable among vars appearing in Top-20] (top 20)
+    2 | MARSTAT                        | freq=1/1 | rank_range=0
+    6 | NOPRIOR                        | freq=1/1 | rank_range=0
+   12 | GENDER                         | freq=1/1 | rank_range=0
+   17 | EMPLOY_D                       | freq=1/1 | rank_range=0
+   18 | LIVARAG_D                      | freq=1/1 | rank_range=0
+   19 | ARRESTS_D                      | freq=1/1 | rank_range=0
+   20 | DSMCRIT                        | freq=1/1 | rank_range=0
+   25 | DETNLF_D                       | freq=1/1 | rank_range=0
+   31 | SUB2_D                         | freq=1/1 | rank_range=0
+   32 | SUB3_D                         | freq=1/1 | rank_range=0
+   39 | FREQ1_D                        | freq=1/1 | rank_range=0
+   41 | FREQ3_D                        | freq=1/1 | rank_range=0
+   42 | FRSTUSE1                       | freq=1/1 | rank_range=0
+   52 | HERFLG                         | freq=1/1 | rank_range=0
+   54 | OPSYNFLG                       | freq=1/1 | rank_range=0
+   61 | TRNQFLG                        | freq=1/1 | rank_range=0
+   63 | SEDHPFLG                       | freq=1/1 | rank_range=0
+   67 | DIVISION                       | freq=1/1 | rank_range=0
+   68 | REGION                         | freq=1/1 | rank_range=0
+   71 | CBSA2020                       | freq=1/1 | rank_range=0
+
+=== Unstable Variables Report (Top-30, seeds=1) ===
+Stable in Top-30 (appear in all seeds): 30
+Unstable in Top-30 (appear in some seeds): 0
+
+[Stable-in-TopK]
+    2 | MARSTAT
+    4 | DETCRIM
+    6 | NOPRIOR
+   12 | GENDER
+   17 | EMPLOY_D
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   23 | ETHNIC
+   25 | DETNLF_D
+   31 | SUB2_D
+   32 | SUB3_D
+   34 | ROUTE2
+   39 | FREQ1_D
+   41 | FREQ3_D
+   42 | FRSTUSE1
+   52 | HERFLG
+   54 | OPSYNFLG
+   55 | PCPFLG
+   56 | HALLFLG
+   57 | MTHAMFLG
+   60 | BENZFLG
+   61 | TRNQFLG
+   63 | SEDHPFLG
+   64 | INHFLG
+   65 | OTCFLG
+   67 | DIVISION
+   68 | REGION
+   70 | ALCDRUG
+   71 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+
+[Most rank-unstable among vars appearing in Top-30] (top 20)
+    2 | MARSTAT                        | freq=1/1 | rank_range=0
+    4 | DETCRIM                        | freq=1/1 | rank_range=0
+    6 | NOPRIOR                        | freq=1/1 | rank_range=0
+   12 | GENDER                         | freq=1/1 | rank_range=0
+   17 | EMPLOY_D                       | freq=1/1 | rank_range=0
+   18 | LIVARAG_D                      | freq=1/1 | rank_range=0
+   19 | ARRESTS_D                      | freq=1/1 | rank_range=0
+   20 | DSMCRIT                        | freq=1/1 | rank_range=0
+   23 | ETHNIC                         | freq=1/1 | rank_range=0
+   25 | DETNLF_D                       | freq=1/1 | rank_range=0
+   31 | SUB2_D                         | freq=1/1 | rank_range=0
+   32 | SUB3_D                         | freq=1/1 | rank_range=0
+   34 | ROUTE2                         | freq=1/1 | rank_range=0
+   39 | FREQ1_D                        | freq=1/1 | rank_range=0
+   41 | FREQ3_D                        | freq=1/1 | rank_range=0
+   42 | FRSTUSE1                       | freq=1/1 | rank_range=0
+   52 | HERFLG                         | freq=1/1 | rank_range=0
+   54 | OPSYNFLG                       | freq=1/1 | rank_range=0
+   55 | PCPFLG                         | freq=1/1 | rank_range=0
+   56 | HALLFLG                        | freq=1/1 | rank_range=0
+
+=== Top 20 (mean ± std) ===
+ idx name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0  LOS 0.015764  0.0        0.015764       0.015764 0.0          1
+
+=== Bottom 20 (mean ± std) ===
+ idx name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0  LOS 0.015764  0.0        0.015764       0.015764 0.0          1
+
+=== Scalar Stability Report: LOS ===
+values: [0.015763500705361366]
+mean: 0.015764  std: 0.000000  cv: 0.000000
+
+=== Top 20 (mean ± std) ===
+ idx                  name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+  19             ARRESTS_D 2.433294  0.0        2.433294       2.433294 0.0          1
+  52                HERFLG 1.805028  0.0        1.805028       1.805028 0.0          2
+  31                SUB2_D 1.652641  0.0        1.652641       1.652641 0.0          3
+  68                REGION 1.497904  0.0        1.497904       1.497904 0.0          4
+  39               FREQ1_D 0.857133  0.0        0.857133       0.857133 0.0          5
+  71              CBSA2020 0.783490  0.0        0.783490       0.783490 0.0          6
+  48 FREQ_ATND_SELF_HELP_D 0.734874  0.0        0.734874       0.734874 0.0          7
+  17              EMPLOY_D 0.699765  0.0        0.699765       0.699765 0.0          8
+  35                ROUTE3 0.693899  0.0        0.693899       0.693899 0.0          9
+  55                PCPFLG 0.445761  0.0        0.445761       0.445761 0.0         10
+  34                ROUTE2 0.388749  0.0        0.388749       0.388749 0.0         11
+  18             LIVARAG_D 0.373757  0.0        0.373757       0.373757 0.0         12
+  53               METHFLG 0.341866  0.0        0.341866       0.341866 0.0         13
+  20               DSMCRIT 0.331240  0.0        0.331240       0.331240 0.0         14
+  46               PRIMPAY 0.294246  0.0        0.294246       0.294246 0.0         15
+   9               METHUSE 0.259656  0.0        0.259656       0.259656 0.0         16
+  59               STIMFLG 0.258630  0.0        0.258630       0.258630 0.0         17
+   0                STFIPS 0.244835  0.0        0.244835       0.244835 0.0         18
+  45               HLTHINS 0.201033  0.0        0.201033       0.201033 0.0         19
+  65                OTCFLG 0.171279  0.0        0.171279       0.171279 0.0         20
+
+=== Bottom 20 (mean ± std) ===
+ idx     name      mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   3 SERVICES -0.225504  0.0       -0.225504      -0.225504 0.0         53
+  43 FRSTUSE2 -0.261268  0.0       -0.261268      -0.261268 0.0         54
+  30   SUB1_D -0.263625  0.0       -0.263625      -0.263625 0.0         55
+  21      AGE -0.283701  0.0       -0.283701      -0.283701 0.0         56
+   4  DETCRIM -0.289793  0.0       -0.289793      -0.289793 0.0         57
+   2  MARSTAT -0.297318  0.0       -0.297318      -0.297318 0.0         58
+   1     EDUC -0.328819  0.0       -0.328819      -0.328819 0.0         59
+  50  COKEFLG -0.332018  0.0       -0.332018      -0.332018 0.0         60
+  25 DETNLF_D -0.351041  0.0       -0.351041      -0.351041 0.0         61
+  42 FRSTUSE1 -0.429524  0.0       -0.429524      -0.429524 0.0         62
+  23   ETHNIC -0.469542  0.0       -0.469542      -0.469542 0.0         63
+  22     RACE -0.512262  0.0       -0.512262      -0.512262 0.0         64
+  49   ALCFLG -0.525540  0.0       -0.525540      -0.525540 0.0         65
+  33   ROUTE1 -0.548834  0.0       -0.548834      -0.548834 0.0         66
+  56  HALLFLG -0.623665  0.0       -0.623665      -0.623665 0.0         67
+  67 DIVISION -0.625240  0.0       -0.625240      -0.625240 0.0         68
+   6  NOPRIOR -0.659704  0.0       -0.659704      -0.659704 0.0         69
+  66 OTHERFLG -0.837142  0.0       -0.837142      -0.837142 0.0         70
+  61  TRNQFLG -1.112242  0.0       -1.112242      -1.112242 0.0         71
+  13      VET -1.203954  0.0       -1.203954      -1.203954 0.0         72
+
+=== Stability Report ===
+Spearman avg: 0.0000
+Spearman pairs: []
+
+Top-k overlap/Jaccard (pairwise):
+  k=10
+  k=20
+  k=30
+
+Top-k averages:
+  k=10 overlap_avg=0.000  jaccard_avg=0.000
+  k=20 overlap_avg=0.000  jaccard_avg=0.000
+  k=30 overlap_avg=0.000  jaccard_avg=0.000
+
+=== Unstable Variables Report (Top-20, seeds=1) ===
+Stable in Top-20 (appear in all seeds): 20
+Unstable in Top-20 (appear in some seeds): 0
+
+[Stable-in-TopK]
+    0 | STFIPS
+    9 | METHUSE
+   17 | EMPLOY_D
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   31 | SUB2_D
+   34 | ROUTE2
+   35 | ROUTE3
+   39 | FREQ1_D
+   45 | HLTHINS
+   46 | PRIMPAY
+   48 | FREQ_ATND_SELF_HELP_D
+   52 | HERFLG
+   53 | METHFLG
+   55 | PCPFLG
+   59 | STIMFLG
+   65 | OTCFLG
+   68 | REGION
+   71 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+
+[Most rank-unstable among vars appearing in Top-20] (top 20)
+    0 | STFIPS                         | freq=1/1 | rank_range=0
+    9 | METHUSE                        | freq=1/1 | rank_range=0
+   17 | EMPLOY_D                       | freq=1/1 | rank_range=0
+   18 | LIVARAG_D                      | freq=1/1 | rank_range=0
+   19 | ARRESTS_D                      | freq=1/1 | rank_range=0
+   20 | DSMCRIT                        | freq=1/1 | rank_range=0
+   31 | SUB2_D                         | freq=1/1 | rank_range=0
+   34 | ROUTE2                         | freq=1/1 | rank_range=0
+   35 | ROUTE3                         | freq=1/1 | rank_range=0
+   39 | FREQ1_D                        | freq=1/1 | rank_range=0
+   45 | HLTHINS                        | freq=1/1 | rank_range=0
+   46 | PRIMPAY                        | freq=1/1 | rank_range=0
+   48 | FREQ_ATND_SELF_HELP_D          | freq=1/1 | rank_range=0
+   52 | HERFLG                         | freq=1/1 | rank_range=0
+   53 | METHFLG                        | freq=1/1 | rank_range=0
+   55 | PCPFLG                         | freq=1/1 | rank_range=0
+   59 | STIMFLG                        | freq=1/1 | rank_range=0
+   65 | OTCFLG                         | freq=1/1 | rank_range=0
+   68 | REGION                         | freq=1/1 | rank_range=0
+   71 | CBSA2020                       | freq=1/1 | rank_range=0
+
+=== Unstable Variables Report (Top-30, seeds=1) ===
+Stable in Top-30 (appear in all seeds): 30
+Unstable in Top-30 (appear in some seeds): 0
+
+[Stable-in-TopK]
+    0 | STFIPS
+    7 | ARRESTS
+    9 | METHUSE
+   10 | PSYPROB
+   12 | GENDER
+   17 | EMPLOY_D
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   26 | PRIMINC
+   31 | SUB2_D
+   32 | SUB3_D
+   34 | ROUTE2
+   35 | ROUTE3
+   37 | FREQ2
+   39 | FREQ1_D
+   41 | FREQ3_D
+   45 | HLTHINS
+   46 | PRIMPAY
+   48 | FREQ_ATND_SELF_HELP_D
+   52 | HERFLG
+   53 | METHFLG
+   54 | OPSYNFLG
+   55 | PCPFLG
+   59 | STIMFLG
+   60 | BENZFLG
+   65 | OTCFLG
+   68 | REGION
+   70 | ALCDRUG
+   71 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+
+[Most rank-unstable among vars appearing in Top-30] (top 20)
+    0 | STFIPS                         | freq=1/1 | rank_range=0
+    7 | ARRESTS                        | freq=1/1 | rank_range=0
+    9 | METHUSE                        | freq=1/1 | rank_range=0
+   10 | PSYPROB                        | freq=1/1 | rank_range=0
+   12 | GENDER                         | freq=1/1 | rank_range=0
+   17 | EMPLOY_D                       | freq=1/1 | rank_range=0
+   18 | LIVARAG_D                      | freq=1/1 | rank_range=0
+   19 | ARRESTS_D                      | freq=1/1 | rank_range=0
+   20 | DSMCRIT                        | freq=1/1 | rank_range=0
+   26 | PRIMINC                        | freq=1/1 | rank_range=0
+   31 | SUB2_D                         | freq=1/1 | rank_range=0
+   32 | SUB3_D                         | freq=1/1 | rank_range=0
+   34 | ROUTE2                         | freq=1/1 | rank_range=0
+   35 | ROUTE3                         | freq=1/1 | rank_range=0
+   37 | FREQ2                          | freq=1/1 | rank_range=0
+   39 | FREQ1_D                        | freq=1/1 | rank_range=0
+   41 | FREQ3_D                        | freq=1/1 | rank_range=0
+   45 | HLTHINS                        | freq=1/1 | rank_range=0
+   46 | PRIMPAY                        | freq=1/1 | rank_range=0
+   48 | FREQ_ATND_SELF_HELP_D          | freq=1/1 | rank_range=0
+
+=== Top 20 (mean ± std) ===
+ idx name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0  LOS -0.11258  0.0        -0.11258       -0.11258 0.0          1
+
+=== Bottom 20 (mean ± std) ===
+ idx name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0  LOS -0.11258  0.0        -0.11258       -0.11258 0.0          1
+
+=== Scalar Stability Report: LOS ===
+values: [-0.11257994920015335]
+mean: -0.112580  std: 0.000000  cv: 0.000000
+
+=== Top 20 (mean ± std) ===
+ idx  name      mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0 delta -0.005392  0.0       -0.005392      -0.005392 0.0          1
+
+=== Bottom 20 (mean ± std) ===
+ idx  name      mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0 delta -0.005392  0.0       -0.005392      -0.005392 0.0          1
+
+=== Scalar Stability Report: delta ===
+values: [-0.005391701124608517]
+mean: -0.005392  std: 0.000000  cv: 0.000000
+
+=== Top 20 (mean ± std) ===
+ idx        name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0 delta_ratio 0.040159  0.0        0.040159       0.040159 0.0          1
+
+=== Bottom 20 (mean ± std) ===
+ idx        name     mean  std  mean_minus_std  mean_plus_std  cv  rank_mean
+   0 delta_ratio 0.040159  0.0        0.040159       0.040159 0.0          1
+
+=== Scalar Stability Report: delta_ratio ===
+values: [0.040159329771995544]
+mean: 0.040159  std: 0.000000  cv: 0.000000
+
+[LOS_abs distribution](seed: 0)
+    mean: 0.015764
+  median: 0.014129
+     p90: 0.032249
+     p95: 0.039562
+     p99: 0.053425
+     max: 0.107977
+
+[delta distribution](seed: 0)
+    mean: -0.005392
+  median: -0.006823
+     p90: 0.044635
+     p95: 0.087499
+     p99: 0.421379
+     max: 14.533439
+
+[delta_ratio distribution](seed: 0)
+    mean: 0.040159
+  median: 0.006553
+     p90: 0.041371
+     p95: 0.081451
+     p99: 0.351174
+     max: 505.809906
+--------------------Interpreting Models with Integrated Gradients FINISHED--------------------

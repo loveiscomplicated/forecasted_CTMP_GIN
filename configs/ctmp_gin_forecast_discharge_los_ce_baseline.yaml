@@ -1,0 +1,56 @@
+device: null
+
+run_name: ctmp_gin_forecast_discharge_los_ce_baseline
+
+forecasted_discharge:
+  enabled: true
+  checkpoint_path: runs/20260507-205629__discharge_predictor__bs=1024__lr=1.00e-03__seed=1/checkpoints/epoch_32.pt
+
+forecasted_los:
+  enabled: true
+  checkpoint_path: runs/20260508-041411__los_ce_predictor__bs=1024__lr=1.00e-03__seed=1/checkpoints/best.pt
+  variant: baseline
+  output_offset: 1
+
+edge:
+  is_mi_based: True
+  n_neighbors: 3
+  top_k: 9
+  threshold: 0.02
+  pruning_ratio: 0.5
+  return_edge_attr: False
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 96
+    gin_2_layers: 2
+    train_eps: True
+    los_embedding_dim: 4
+    gate_hidden_ch: 64
+    dropout_p: 0.1242026370635674
+    readout_mode: "concat"
+
+train:
+  batch_size: 512
+  learning_rate: 0.0006103193737231391
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.2
+  num_workers: 4
+  optimizer: "adam"
+  weight_decay: 1.1058007626429544e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  ig_label: False
+  cv: False
+  n_folds: 5
+  do_preprocess: False

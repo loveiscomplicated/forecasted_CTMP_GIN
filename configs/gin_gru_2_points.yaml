@@ -1,0 +1,40 @@
+device: null # if null, it automatically sets the available device. (cuda | mps | cpu)
+            # it is often better to use cpu due to recurrent unit.
+edge:
+  is_mi_based: True # if 0, it generates fully connected edge index.
+  n_neighbors: 7 # NOTE: cv result of n_neighbors: 3
+  top_k: 6
+  threshold: 0.02
+  pruning_ratio: 0.3
+  return_edge_attr: False # CAUTION: potential error when set to True
+  mi_cached: True
+  cache_path: None
+
+model:
+  name: gin_gru_2_points
+  params:
+    embedding_dim: 64
+    gin_hidden_channel: 16
+    train_eps: True
+    gin_layers: 1
+    gru_hidden_channel: 64
+    dropout_p: 0.36745589651424265
+    gin_layer_out_dropout_p: 0.12883365039350256
+    gru_layer_out_dropout_p: 0.004224280640471357
+    max_los_norm: 37.0  # LOS feature scaling divisor
+
+train:
+  batch_size: 128
+  learning_rate: 0.0012512624148496348 # optimizer learning rate
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  cv: False
+  n_folds: 5

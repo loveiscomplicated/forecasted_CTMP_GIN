@@ -1,0 +1,52 @@
+{
+  "command_args": {
+    "analysis_name": null,
+    "downstream_map": "configs/analysis/downstream_run_map.csv",
+    "los_bins": "coarse6",
+    "out_dir": "reports/joint_dv_auc/id9_22_26_38",
+    "registry_path": "forecasted_ctmp_gin_joint_predictor_experiments_registry_filled.md",
+    "run_ids": [
+      9,
+      22,
+      26,
+      38
+    ],
+    "run_map_csv": null,
+    "run_name_list": null,
+    "runs_root": "runs",
+    "split": "test",
+    "strict": false,
+    "top_k_heads": 5
+  },
+  "created_files": [
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/joint_dv_auc/id9_22_26_38/run_level_dv_auc.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/joint_dv_auc/id9_22_26_38/head_level_dv_auc.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/joint_dv_auc/id9_22_26_38/run_level_dv_auc.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/joint_dv_auc/id9_22_26_38/manifest.json"
+  ],
+  "downstream_dirs": {
+    "22": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+    "26": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+    "38": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+    "9": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2"
+  },
+  "git_commit": "ca3878f12eed823090d2e4375752b86e00e18b5c",
+  "missing_files": [
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/configs/analysis/downstream_run_map.csv"
+  ],
+  "resolved_run_dirs": {
+    "22": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260517-084644__joint_consistent_predictor__bs=1024__lr=1.00e-03__seed=1",
+    "26": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260517-085112__joint_consistent_predictor__bs=1024__lr=1.00e-03__seed=1",
+    "38": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260517-174939__joint_consistent_predictor__bs=1024__lr=1.00e-03__seed=1",
+    "9": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260516-125415__joint_consistent_predictor__bs=1024__lr=1.00e-03__seed=1"
+  },
+  "run_ids": [
+    9,
+    22,
+    26,
+    38
+  ],
+  "warnings": [
+    "downstream map: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/configs/analysis/downstream_run_map.csv"
+  ]
+}

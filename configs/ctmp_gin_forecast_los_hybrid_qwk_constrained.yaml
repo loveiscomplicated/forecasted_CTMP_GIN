@@ -1,0 +1,53 @@
+device: null
+
+run_name: ctmp_gin_forecast_los_hybrid_qwk_constrained
+
+forecasted_los:
+  enabled: true
+  checkpoint_path: null  # Fill with runs/<los_hybrid_ce_ordinal_predictor_run>/checkpoints/best.pt
+  calibration_path: null # Fill with runs/<los_hybrid_ce_ordinal_predictor_run>/calibration.json
+  variant: qwk_constrained
+  output_offset: 1
+
+edge:
+  is_mi_based: True
+  n_neighbors: 1
+  top_k: 12
+  threshold: 0.0
+  pruning_ratio: 0.3
+  return_edge_attr: False
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 32
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 32
+    gin_2_layers: 1
+    train_eps: True
+    los_embedding_dim: 4
+    gate_hidden_ch: 128
+    dropout_p: 0.023922836338533815
+    readout_mode: "concat"
+
+train:
+  batch_size: 128
+  learning_rate: 0.00023126895284950023
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 4
+  optimizer: "adamw"
+  weight_decay: 1.096597822487642e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  ig_label: False
+  do_preprocess: False
+  cv: False
+  n_folds: 5

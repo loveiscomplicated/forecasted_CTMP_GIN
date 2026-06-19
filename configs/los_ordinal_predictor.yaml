@@ -1,0 +1,42 @@
+device: null
+
+run_name: los_ordinal_predictor
+
+model:
+  name: los_ordinal_predictor
+  params:
+    embedding_dim: 32
+    hidden_dim: 512
+    num_layers: 4
+    dropout_p: 0.2
+
+loss:
+  type: ordinal_bce
+  use_pos_weight: true
+  pos_weight_clip: 10.0
+
+calibration:
+  enabled: true
+  objective: qwk
+  export_val_predictions: false
+  export_test_predictions: true
+  constrained_qwk:
+    min_within_1_delta: 0.0
+    min_within_2_delta: 0.0
+
+train:
+  batch_size: 1024
+  learning_rate: 1.0e-3
+  epochs: 50
+  seed: 1
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 6
+  optimizer: adamw
+  weight_decay: 1.0e-5
+  monitor_metric: valid_qwk
+  monitor_mode: max
+  do_preprocess: false

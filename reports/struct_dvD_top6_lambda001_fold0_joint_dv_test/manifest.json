@@ -1,0 +1,40 @@
+{
+  "command_args": {
+    "analysis_name": null,
+    "downstream_map": null,
+    "los_bins": "coarse6",
+    "out_dir": "reports/struct_dvD_top6_lambda001_fold0_joint_dv_test",
+    "registry_path": null,
+    "run_ids": null,
+    "run_map_csv": null,
+    "run_name_list": [
+      "runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0",
+      "runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0"
+    ],
+    "runs_root": ".",
+    "split": "test",
+    "strict": false,
+    "top_k_heads": 8
+  },
+  "created_files": [
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_top6_lambda001_fold0_joint_dv_test/run_level_dv_auc.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_top6_lambda001_fold0_joint_dv_test/head_level_dv_auc.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_top6_lambda001_fold0_joint_dv_test/run_level_dv_auc.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_top6_lambda001_fold0_joint_dv_test/manifest.json"
+  ],
+  "downstream_dirs": {
+    "1": "",
+    "2": ""
+  },
+  "git_commit": "8bfd7fb1263ec2351b4e13a27eec05c33363a5a2",
+  "missing_files": [],
+  "resolved_run_dirs": {
+    "1": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0",
+    "2": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0"
+  },
+  "run_ids": [
+    1,
+    2
+  ],
+  "warnings": []
+}

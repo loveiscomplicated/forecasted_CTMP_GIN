@@ -1,0 +1,2 @@
+idx,name,mean,std,mean_minus_std,mean_plus_std,cv,rank_mean
+0,LOS,-1.7990515232086182,0.0,-1.7990515232086182,-1.7990515232086182,0.0,1

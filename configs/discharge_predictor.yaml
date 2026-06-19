@@ -1,0 +1,35 @@
+device: null
+
+run_name: discharge_predictor
+
+model:
+  name: discharge_predictor
+  params:
+    embedding_dim: 32
+    hidden_dim: 512
+    num_layers: 4
+    dropout: 0.2
+
+targets:
+  include_discharge_vars: true
+  include_los: false
+
+loss:
+  type: multi_task_cross_entropy
+
+train:
+  batch_size: 1024
+  learning_rate: 0.001
+  epochs: 50
+  seed: 1
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 5
+  optimizer: adamw
+  weight_decay: 0.00001
+  monitor_metric: valid_mean_macro_f1
+  monitor_mode: max
+  do_preprocess: false

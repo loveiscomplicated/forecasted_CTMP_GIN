@@ -1,0 +1,4 @@
+stream,mean_weight,std_across_samples,std_across_folds
+Admission,0.22602151,0.2405929,0.07755646
+Discharge,0.2852044,0.24313465,0.08757331
+Merged / Cross-temporal,0.4887741,0.31667715,0.11880088

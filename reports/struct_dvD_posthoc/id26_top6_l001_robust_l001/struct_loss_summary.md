@@ -1,0 +1,36 @@
+# Structured Loss Summary
+
+| run_name                | metric                             | status  | first       | last        | min         | delta_last_first | decreased | first_epoch | last_epoch | min_epoch |
+| ----------------------- | ---------------------------------- | ------- | ----------- | ----------- | ----------- | ---------------- | --------- | ----------- | ---------- | --------- |
+| struct_robust_top3_l003 | train_struct_DETNLF_D              | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | train_struct_EMPLOY_D              | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | train_struct_FREQ1_D               | ok      | 0.000633685 | 0.000390512 | 0.000380571 | -0.000243173     | True      | 1           | 16         | 15        |
+| struct_robust_top3_l003 | train_struct_FREQ2_D               | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | train_struct_FREQ_ATND_SELF_HELP_D | ok      | 0.00180823  | 0.000937145 | 0.000908862 | -0.000871089     | True      | 1           | 16         | 15        |
+| struct_robust_top3_l003 | train_struct_SUB1_D                | ok      | 0.00479527  | 0.0013246   | 0.00130505  | -0.00347067      | True      | 1           | 16         | 15        |
+| struct_robust_top3_l003 | train_struct_loss                  | ok      | 0.0024124   | 0.000884086 | 0.000864828 | -0.00152831      | True      | 1           | 16         | 15        |
+| struct_robust_top3_l003 | valid_struct_DETNLF_D              | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | valid_struct_EMPLOY_D              | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | valid_struct_FREQ1_D               | ok      | 0.000667219 | 0.00029674  | 0.000274339 | -0.000370479     | True      | 1           | 16         | 13        |
+| struct_robust_top3_l003 | valid_struct_FREQ2_D               | missing | nan         | nan         | nan         | nan              | nan       | nan         | nan        | nan       |
+| struct_robust_top3_l003 | valid_struct_FREQ_ATND_SELF_HELP_D | ok      | 0.00100179  | 0.00081299  | 0.000771399 | -0.0001888       | True      | 1           | 16         | 11        |
+| struct_robust_top3_l003 | valid_struct_SUB1_D                | ok      | 0.00175051  | 0.0010378   | 0.0010378   | -0.000712704     | True      | 1           | 16         | 16        |
+| struct_robust_top3_l003 | valid_struct_loss                  | ok      | 0.00113984  | 0.000715844 | 0.000715844 | -0.000423994     | True      | 1           | 16         | 16        |
+| struct_robust_top3_l003 | train_lambda_struct_loss_ratio     | ok      | 2.71053e-06 | 1.28428e-06 | 1.25335e-06 | -1.42625e-06     | True      | 1           | 16         | 15        |
+| struct_robust_top3_l003 | valid_lambda_struct_loss_ratio     | ok      | 1.60903e-06 | 1.10188e-06 | 1.10188e-06 | -5.0715e-07      | True      | 1           | 16         | 16        |
+| struct_top6_l001        | train_struct_DETNLF_D              | ok      | 0.00270504  | 0.000501851 | 0.000501851 | -0.00220318      | True      | 1           | 30         | 30        |
+| struct_top6_l001        | train_struct_EMPLOY_D              | ok      | 0.000798599 | 0.000481858 | 0.000467093 | -0.000316741     | True      | 1           | 30         | 25        |
+| struct_top6_l001        | train_struct_FREQ1_D               | ok      | 0.000589417 | 0.000393378 | 0.000362743 | -0.000196039     | True      | 1           | 30         | 29        |
+| struct_top6_l001        | train_struct_FREQ2_D               | ok      | 0.00230885  | 0.000121407 | 0.000116273 | -0.00218745      | True      | 1           | 30         | 28        |
+| struct_top6_l001        | train_struct_FREQ_ATND_SELF_HELP_D | ok      | 0.00176948  | 0.000875274 | 0.000858851 | -0.000894205     | True      | 1           | 30         | 25        |
+| struct_top6_l001        | train_struct_SUB1_D                | ok      | 0.00477772  | 0.00128102  | 0.00127096  | -0.0034967       | True      | 1           | 30         | 29        |
+| struct_top6_l001        | train_struct_loss                  | ok      | 0.00215818  | 0.000609131 | 0.000604428 | -0.00154905      | True      | 1           | 30         | 29        |
+| struct_top6_l001        | valid_struct_DETNLF_D              | ok      | 0.000569685 | 0.000463125 | 0.000460905 | -0.00010656      | True      | 1           | 30         | 14        |
+| struct_top6_l001        | valid_struct_EMPLOY_D              | ok      | 0.000541035 | 0.000371374 | 0.000357917 | -0.000169661     | True      | 1           | 30         | 29        |
+| struct_top6_l001        | valid_struct_FREQ1_D               | ok      | 0.000502617 | 0.000273713 | 0.000271526 | -0.000228904     | True      | 1           | 30         | 20        |
+| struct_top6_l001        | valid_struct_FREQ2_D               | ok      | 0.000191715 | 9.45377e-05 | 8.7771e-05  | -9.71772e-05     | True      | 1           | 30         | 27        |
+| struct_top6_l001        | valid_struct_FREQ_ATND_SELF_HELP_D | ok      | 0.000978824 | 0.000858641 | 0.000758818 | -0.000120182     | True      | 1           | 30         | 17        |
+| struct_top6_l001        | valid_struct_SUB1_D                | ok      | 0.0016609   | 0.00103693  | 0.00102938  | -0.000623971     | True      | 1           | 30         | 24        |
+| struct_top6_l001        | valid_struct_loss                  | ok      | 0.000740796 | 0.000516387 | 0.000514964 | -0.000224409     | True      | 1           | 30         | 23        |
+| struct_top6_l001        | train_lambda_struct_loss_ratio     | ok      | 2.42636e-06 | 9.01549e-07 | 8.93447e-07 | -1.52481e-06     | True      | 1           | 30         | 28        |
+| struct_top6_l001        | valid_lambda_struct_loss_ratio     | ok      | 1.04625e-06 | 8.02871e-07 | 7.94544e-07 | -2.43377e-07     | True      | 1           | 30         | 17        |

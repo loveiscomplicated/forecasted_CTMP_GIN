@@ -1,0 +1,75 @@
+device: null
+
+run_name: a3tgcn_forecast_discharge_los_ce_baseline_leakage_free
+
+forecasted_pipeline:
+  enabled: true
+  discharge_config_path: configs/discharge_predictor.yaml
+  los_config_path: configs/los_coarse_predictor.yaml
+  split:
+    train_core_ratio: 0.8
+    predictor_val_ratio: 0.1
+    gnn_val_ratio: 0.1
+    stratify_by: REASONb
+    stratify_aux: []
+  train_prediction_mode: oof
+  oof:
+    n_inner_folds: 5
+    use_fixed_predictor_hparams: true
+    use_fixed_best_epoch: true
+  eval_predictor:
+    mode: fold_final
+    train_scope: train_core
+    calibration_split: predictor_val
+  leakage_guard:
+    forbid_outer_test_in_predictor: true
+    forbid_outer_test_in_calibration: true
+    forbid_outer_test_in_gnn_selection: true
+    require_predictor_val_separate_from_gnn_val: true
+
+forecasted_discharge:
+  enabled: true
+
+forecasted_los:
+  enabled: true
+  target_mode: coarse
+  num_classes: 6
+  variant: baseline
+  return_type: hard
+  probability_source: raw
+  temperature: null
+  output_offset: 1
+
+edge:
+  is_mi_based: True
+  n_neighbors: 3
+  top_k: 6
+  threshold: 0.01
+  pruning_ratio: 0.5
+  return_edge_attr: False
+  mi_cached: True
+  cache_path: null
+
+model:
+  name: a3tgcn
+  params:
+    embedding_dim: 32
+    hidden_channel: 32
+
+train:
+  batch_size: 32
+  learning_rate: 0.001
+  epochs: 20
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  optimizer: "adam"
+  weight_decay: 0.0
+  lr_scheduler_patience: 10
+  early_stopping_patience: 15
+  decision_threshold: 0.5
+  cv: True
+  n_folds: 5

@@ -1,0 +1,46 @@
+# although mps is available, it is often better to use cpu
+# need is_copied on edge
+device: null # if null, it automatically sets the available device. (cuda | mps | cpu)
+            # it is often better to use cpu due to recurrent unit.
+
+edge:
+  is_mi_based: True # if 0, it generates fully connected edge index.
+  n_neighbors: 3 # NOTE: cv result of n_neighbors: 3
+  top_k: 6
+  threshold: 0.01
+  pruning_ratio: 0.5
+  return_edge_attr: False # CAUTION: potential error when set to True
+  mi_cached: True
+  cache_path: None
+
+model:
+  name: a3tgcn_2_points
+  params:
+    embedding_dim: 32
+    hidden_channel: 32
+
+train:
+  batch_size: 32
+  learning_rate: 0.001 # optimizer learning rate
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  optimizer: "adam"
+  weight_decay: 0.0
+  lr_scheduler_patience: 10
+  early_stopping_patience: 15
+  decision_threshold: 0.5
+  cv: False # kfold crosss validation
+  n_folds: 5
+
+cv: # optuna 
+  mode:
+  outer_k: 1
+  inner_k: 1
+  n_trials: 1
+  epochs: 20
+  

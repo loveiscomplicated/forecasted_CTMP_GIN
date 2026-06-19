@@ -1,0 +1,173 @@
+=== Building mean±std table across seeds ===
+Saved: /Users/jeong-yunseong/Documents/programming/Phase_2_public/src/explainers/results/permutation_mean_std_ratio0.05.csv
+
+=== Top 30 (mean±std) ===
+ idx                  name     mean      std  mean_minus_std  mean_plus_std       cv  rank_mean
+  72                   LOS 0.086122 0.001590        0.084532       0.087712 0.018462          1
+   3              SERVICES 0.082058 0.000600        0.081458       0.082659 0.007315          2
+   0                STFIPS 0.044196 0.001619        0.042577       0.045816 0.036642          3
+  71              CBSA2020 0.038281 0.001202        0.037079       0.039483 0.031397          4
+  39               FREQ1_D 0.025333 0.000402        0.024931       0.025735 0.015861          5
+  48 FREQ_ATND_SELF_HELP_D 0.007044 0.000378        0.006666       0.007422 0.053630          6
+  18             LIVARAG_D 0.006280 0.000057        0.006222       0.006337 0.009146          7
+  30                SUB1_D 0.004890 0.000238        0.004651       0.005128 0.048754          8
+   5               PSOURCE 0.003627 0.000226        0.003401       0.003853 0.062384          9
+   9               METHUSE 0.003298 0.000168        0.003130       0.003465 0.050815         10
+  42              FRSTUSE1 0.003180 0.000148        0.003032       0.003329 0.046687         11
+   4               DETCRIM 0.003074 0.000255        0.002819       0.003330 0.083039         12
+  67              DIVISION 0.002979 0.000056        0.002923       0.003035 0.018898         13
+  20               DSMCRIT 0.002971 0.000247        0.002725       0.003218 0.082993         14
+  46               PRIMPAY 0.002876 0.000298        0.002577       0.003174 0.103761         15
+  68                REGION 0.002679 0.000243        0.002436       0.002922 0.090629         16
+  15               DAYWAIT 0.002183 0.000313        0.001869       0.002496 0.143531         17
+  19             ARRESTS_D 0.001981 0.000184        0.001797       0.002165 0.092659         18
+  10               PSYPROB 0.001720 0.000110        0.001611       0.001830 0.063712         19
+  17              EMPLOY_D 0.001575 0.000224        0.001351       0.001799 0.141956         20
+  27                  SUB1 0.001430 0.000285        0.001145       0.001714 0.199296         21
+  14               LIVARAG 0.001355 0.000128        0.001227       0.001483 0.094182         22
+  45               HLTHINS 0.001206 0.000252        0.000954       0.001457 0.208815         23
+  36                 FREQ1 0.001108 0.000162        0.000946       0.001270 0.145992         24
+   1                  EDUC 0.000960 0.000148        0.000812       0.001108 0.154039         25
+   7               ARRESTS 0.000953 0.000254        0.000700       0.001207 0.266343         26
+  16            SERVICES_D 0.000874 0.000103        0.000770       0.000977 0.118363         27
+  24                DETNLF 0.000833 0.000239        0.000594       0.001072 0.287143         28
+  47   FREQ_ATND_SELF_HELP 0.000773 0.000202        0.000572       0.000975 0.260815         29
+  41               FREQ3_D 0.000771 0.000086        0.000684       0.000857 0.112137         30
+
+=== Stability Report ===
+Spearman avg: 0.9537
+Spearman pairs: [((0, 1), 0.9510058164596558), ((0, 2), 0.9568369388580322), ((1, 2), 0.9533197283744812)]
+
+Top-k overlap/Jaccard (pairwise):
+  k=10
+    seeds(0,1) overlap=0.900  jaccard=0.818
+    seeds(0,2) overlap=0.900  jaccard=0.818
+    seeds(1,2) overlap=0.900  jaccard=0.818
+  k=20
+    seeds(0,1) overlap=0.950  jaccard=0.905
+    seeds(0,2) overlap=0.950  jaccard=0.905
+    seeds(1,2) overlap=0.900  jaccard=0.818
+  k=30
+    seeds(0,1) overlap=0.900  jaccard=0.818
+    seeds(0,2) overlap=0.933  jaccard=0.875
+    seeds(1,2) overlap=0.967  jaccard=0.935
+
+Top-k averages:
+  k=10 overlap_avg=0.900  jaccard_avg=0.818
+  k=20 overlap_avg=0.933  jaccard_avg=0.876
+  k=30 overlap_avg=0.933  jaccard_avg=0.876
+
+=== Unstable Variables Report (Top-20, seeds=3) ===
+Stable in Top-20 (appear in all seeds): 18
+Unstable in Top-20 (appear in some seeds): 4
+
+[Stable-in-TopK]
+    0 | STFIPS
+    3 | SERVICES
+    4 | DETCRIM
+    5 | PSOURCE
+    9 | METHUSE
+   15 | DAYWAIT
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   30 | SUB1_D
+   39 | FREQ1_D
+   42 | FRSTUSE1
+   46 | PRIMPAY
+   48 | FREQ_ATND_SELF_HELP_D
+   67 | DIVISION
+   68 | REGION
+   71 | CBSA2020
+   72 | LOS
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+   27 | SUB1                           | 1/3 | 5
+   45 | HLTHINS                        | 1/3 | 4
+   17 | EMPLOY_D                       | 2/3 | 4
+   10 | PSYPROB                        | 2/3 | 2
+
+[Most rank-unstable among vars appearing in Top-20] (top 20)
+    4 | DETCRIM                        | freq=3/3 | rank_range=5
+   27 | SUB1                           | freq=1/3 | rank_range=5
+   17 | EMPLOY_D                       | freq=2/3 | rank_range=4
+   45 | HLTHINS                        | freq=1/3 | rank_range=4
+   46 | PRIMPAY                        | freq=3/3 | rank_range=4
+   68 | REGION                         | freq=3/3 | rank_range=4
+   15 | DAYWAIT                        | freq=3/3 | rank_range=3
+   20 | DSMCRIT                        | freq=3/3 | rank_range=3
+   42 | FRSTUSE1                       | freq=3/3 | rank_range=3
+    9 | METHUSE                        | freq=3/3 | rank_range=2
+   10 | PSYPROB                        | freq=2/3 | rank_range=2
+    5 | PSOURCE                        | freq=3/3 | rank_range=1
+   19 | ARRESTS_D                      | freq=3/3 | rank_range=1
+    0 | STFIPS                         | freq=3/3 | rank_range=0
+    3 | SERVICES                       | freq=3/3 | rank_range=0
+   18 | LIVARAG_D                      | freq=3/3 | rank_range=0
+   30 | SUB1_D                         | freq=3/3 | rank_range=0
+   39 | FREQ1_D                        | freq=3/3 | rank_range=0
+   48 | FREQ_ATND_SELF_HELP_D          | freq=3/3 | rank_range=0
+   67 | DIVISION                       | freq=3/3 | rank_range=0
+
+=== Unstable Variables Report (Top-30, seeds=3) ===
+Stable in Top-30 (appear in all seeds): 27
+Unstable in Top-30 (appear in some seeds): 6
+
+[Stable-in-TopK]
+    0 | STFIPS
+    1 | EDUC
+    3 | SERVICES
+    4 | DETCRIM
+    5 | PSOURCE
+    7 | ARRESTS
+    9 | METHUSE
+   10 | PSYPROB
+   14 | LIVARAG
+   15 | DAYWAIT
+   16 | SERVICES_D
+   17 | EMPLOY_D
+   18 | LIVARAG_D
+   19 | ARRESTS_D
+   20 | DSMCRIT
+   27 | SUB1
+   30 | SUB1_D
+   36 | FREQ1
+   39 | FREQ1_D
+   42 | FRSTUSE1
+   45 | HLTHINS
+   46 | PRIMPAY
+   48 | FREQ_ATND_SELF_HELP_D
+   67 | DIVISION
+   68 | REGION
+   71 | CBSA2020
+   72 | LOS
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+    2 | MARSTAT                        | 1/3 | 10
+   47 | FREQ_ATND_SELF_HELP            | 1/3 | 10
+   41 | FREQ3_D                        | 1/3 | 5
+    6 | NOPRIOR                        | 2/3 | 9
+   26 | PRIMINC                        | 2/3 | 9
+   24 | DETNLF                         | 2/3 | 7
+
+[Most rank-unstable among vars appearing in Top-30] (top 20)
+    2 | MARSTAT                        | freq=1/3 | rank_range=10
+   47 | FREQ_ATND_SELF_HELP            | freq=1/3 | rank_range=10
+    6 | NOPRIOR                        | freq=2/3 | rank_range=9
+   26 | PRIMINC                        | freq=2/3 | rank_range=9
+   24 | DETNLF                         | freq=2/3 | rank_range=7
+    7 | ARRESTS                        | freq=3/3 | rank_range=7
+   41 | FREQ3_D                        | freq=1/3 | rank_range=5
+   16 | SERVICES_D                     | freq=3/3 | rank_range=5
+    4 | DETCRIM                        | freq=3/3 | rank_range=5
+   27 | SUB1                           | freq=3/3 | rank_range=5
+   17 | EMPLOY_D                       | freq=3/3 | rank_range=4
+   68 | REGION                         | freq=3/3 | rank_range=4
+   46 | PRIMPAY                        | freq=3/3 | rank_range=4
+   36 | FREQ1                          | freq=3/3 | rank_range=4
+   45 | HLTHINS                        | freq=3/3 | rank_range=4
+   15 | DAYWAIT                        | freq=3/3 | rank_range=3
+   20 | DSMCRIT                        | freq=3/3 | rank_range=3
+   42 | FRSTUSE1                       | freq=3/3 | rank_range=3
+    9 | METHUSE                        | freq=3/3 | rank_range=2
+   10 | PSYPROB                        | freq=3/3 | rank_range=2

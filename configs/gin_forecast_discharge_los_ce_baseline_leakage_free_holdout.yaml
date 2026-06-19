@@ -1,0 +1,78 @@
+device: null
+
+run_name: gin_forecast_discharge_los_ce_baseline_leakage_free_holdout
+
+forecasted_pipeline:
+  enabled: true
+  discharge_config_path: configs/discharge_predictor.yaml
+  los_config_path: configs/los_coarse_predictor.yaml
+  split:
+    train_core_ratio: 0.8
+    predictor_val_ratio: 0.1
+    gnn_val_ratio: 0.1
+    stratify_by: REASONb
+    stratify_aux: []
+  train_prediction_mode: oof
+  oof:
+    n_inner_folds: 5
+    use_fixed_predictor_hparams: true
+    use_fixed_best_epoch: true
+  eval_predictor:
+    mode: fold_final
+    train_scope: train_core
+    calibration_split: predictor_val
+  leakage_guard:
+    forbid_outer_test_in_predictor: true
+    forbid_outer_test_in_calibration: true
+    forbid_outer_test_in_gnn_selection: true
+    require_predictor_val_separate_from_gnn_val: true
+
+forecasted_discharge:
+  enabled: true
+
+forecasted_los:
+  enabled: true
+  target_mode: coarse
+  num_classes: 6
+  variant: baseline
+  return_type: hard
+  probability_source: raw
+  temperature: null
+  output_offset: 1
+
+edge:
+  is_mi_based: true
+  n_neighbors: 5
+  top_k: 6
+  threshold: 0.0
+  pruning_ratio: 0.3
+  return_edge_attr: false
+  mi_cached: true
+
+model:
+  name: gin
+  params:
+    embedding_dim: 64
+    gin_dim: 96
+    gin_layer_num: 4
+    train_eps: true
+
+train:
+  batch_size: 128
+  learning_rate: 0.0004799804630214713
+  epochs: 100
+  seed: 1
+  binary: true
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.2
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  optimizer: adam
+  weight_decay: 0.0
+  cv: false
+  n_folds: 5
+  ig_label: false
+  do_preprocess: false

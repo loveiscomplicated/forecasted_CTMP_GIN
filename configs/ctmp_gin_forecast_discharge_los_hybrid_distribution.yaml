@@ -1,0 +1,62 @@
+device: null
+
+run_name: ctmp_gin_forecast_discharge_los_hybrid_distribution
+
+forecasted_discharge:
+  enabled: true
+  checkpoint_path: runs/20260507-205629__discharge_predictor__bs=1024__lr=1.00e-03__seed=1/checkpoints/epoch_32.pt
+
+forecasted_los:
+  enabled: true
+  checkpoint_path: runs/20260508-041523__los_hybrid_ce_ordinal_w1__bs=1024__lr=1.00e-03__seed=1/checkpoints/best.pt
+  variant: baseline
+  return_type: distribution
+  probability_source: ce
+  temperature: 1.0
+  output_offset: 1
+
+edge:
+  is_mi_based: True # if 0, it generates fully connected edge index.
+  n_neighbors: 3 
+  top_k: 9
+  threshold: 0.02
+  pruning_ratio: 0.5
+  return_edge_attr: False # CAUTION: potential error when set to True
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 96 # Must match the first GIN's dimensions to avoid errors; 
+                             # otherwise, a projection layer is required.
+    gin_2_layers: 2
+    train_eps: True
+    los_embedding_dim: 4
+    gate_hidden_ch: 64 # Hidden_dim of GatedFusion, If set to None, it defaults to in_dim, which is gin_hidden_channel * 3
+    dropout_p: 0.1242026370635674
+    readout_mode: "concat"  # "concat" | "sum" | "last"
+
+train:
+  batch_size: 512
+  learning_rate: 0.0006103193737231391 # optimizer learning rate
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 4
+  optimizer: "adam"
+  weight_decay: 1.1058007626429544e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10 # 원래 10
+  decision_threshold: 0.5
+
+  ig_label: False # include Neutral labels for Integrated Gradients Method
+                  # Must set to False except using Integrated Gradients
+  cv: False
+  n_folds: 5
+  do_preprocess: False

@@ -1,0 +1,28 @@
+# Risk Head Override Summary
+
+Split: `valid`
+
+Interpretation rules:
+- If `new_dvD_top3 > old_total_drift_top3`, dV_D ranking is downstream-relevant.
+- If `new_dvD_top3 ~= old_total_drift_top3`, the gain is probably dominated by `FREQ_ATND_SELF_HELP_D` and `SUB1_D`.
+- If `new_dvD_top6` improves further, D-side mismatch is distributed across multiple heads.
+- If `new_dvD_top6` still remains far below the single-anchor 0.93 AUC region, D-side override alone is insufficient.
+
+| run_id | run_name | fold | head_set_name | baseline_valid_auc | baseline_test_auc | override_valid_auc | override_test_auc | delta_valid_auc | delta_test_auc | status | warnings |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 9 | 20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2 | 0 | old_total_drift_top3 | 0.885445368210876 | nan | 0.8898990628054921 | nan | 0.004453694594616087 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 9 | 20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2 | 0 | new_dvD_top3 | 0.885445368210876 | nan | 0.8898928974832712 | nan | 0.004447529272395112 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 9 | 20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2 | 0 | new_robust_top3 | 0.885445368210876 | nan | 0.8985790141653084 | nan | 0.013133645954432338 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 9 | 20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2 | 0 | new_dvD_top6 | 0.885445368210876 | nan | 0.9003721245553333 | nan | 0.014926756344457282 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 22 | 20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | old_total_drift_top3 | 0.8845166618539351 | nan | 0.8925812852779195 | nan | 0.008064623423984396 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 22 | 20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top3 | 0.8845166618539351 | nan | 0.8924763834122262 | nan | 0.007959721558291166 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 22 | 20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_robust_top3 | 0.8845166618539351 | nan | 0.8972253909854255 | nan | 0.01270872913149046 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 22 | 20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top6 | 0.8845166618539351 | nan | 0.8989909086175265 | nan | 0.014474246763591436 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 26 | 20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | old_total_drift_top3 | 0.8841430502511681 | nan | 0.8921662368754376 | nan | 0.008023186624269485 | nan | ok |  |
+| 26 | 20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top3 | 0.8841430502511681 | nan | 0.8922659567006 | nan | 0.008122906449431921 | nan | ok |  |
+| 26 | 20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_robust_top3 | 0.8841430502511681 | nan | 0.8992951070630231 | nan | 0.015152056811854941 | nan | ok |  |
+| 26 | 20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top6 | 0.8841430502511681 | nan | 0.899683656901739 | nan | 0.015540606650570887 | nan | ok |  |
+| 38 | 20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | old_total_drift_top3 | 0.8855443795744435 | nan | 0.894225112571832 | nan | 0.008680732997388474 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 38 | 20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top3 | 0.8855443795744435 | nan | 0.8941602391143922 | nan | 0.0086158595399487 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 38 | 20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_robust_top3 | 0.8855443795744435 | nan | 0.9016895166023567 | nan | 0.016145137027913203 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |
+| 38 | 20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3 | 0 | new_dvD_top6 | 0.8855443795744435 | nan | 0.9022888409847001 | nan | 0.01674446141025654 | nan | ok | missing cached_predictions/gnn_val_joint.pt; rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload |

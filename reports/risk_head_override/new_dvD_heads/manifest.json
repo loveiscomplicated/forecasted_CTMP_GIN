@@ -1,0 +1,292 @@
+{
+  "runs_root": "runs",
+  "registry_path": "forecasted_ctmp_gin_joint_predictor_experiments_registry_filled.md",
+  "run_ids": [
+    9,
+    22,
+    26,
+    38
+  ],
+  "head_sets": [
+    "old_total_drift_top3",
+    "new_dvD_top3",
+    "new_robust_top3",
+    "new_dvD_top6"
+  ],
+  "override_mode": "oracle",
+  "split": "valid",
+  "results": [
+    {
+      "run_id": 9,
+      "run_name": "20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2",
+      "fold": 0,
+      "head_set_name": "old_total_drift_top3",
+      "override_heads": [
+        "SERVICES_D",
+        "SUB1_D",
+        "FREQ_ATND_SELF_HELP_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 9,
+      "run_name": "20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2",
+      "fold": 0,
+      "head_set_name": "new_dvD_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 9,
+      "run_name": "20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2",
+      "fold": 0,
+      "head_set_name": "new_robust_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ1_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 9,
+      "run_name": "20260519-030924__ctmp_gin_joint_fresh_id9__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2",
+      "fold": 0,
+      "head_set_name": "new_dvD_top6",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D",
+        "EMPLOY_D",
+        "FREQ1_D",
+        "DETNLF_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 22,
+      "run_name": "20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "old_total_drift_top3",
+      "override_heads": [
+        "SERVICES_D",
+        "SUB1_D",
+        "FREQ_ATND_SELF_HELP_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 22,
+      "run_name": "20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 22,
+      "run_name": "20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_robust_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ1_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 22,
+      "run_name": "20260519-030905__ctmp_gin_joint_fresh_id22__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top6",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D",
+        "EMPLOY_D",
+        "FREQ1_D",
+        "DETNLF_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 26,
+      "run_name": "20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "old_total_drift_top3",
+      "override_heads": [
+        "SERVICES_D",
+        "SUB1_D",
+        "FREQ_ATND_SELF_HELP_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": []
+    },
+    {
+      "run_id": 26,
+      "run_name": "20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": []
+    },
+    {
+      "run_id": 26,
+      "run_name": "20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_robust_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ1_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": []
+    },
+    {
+      "run_id": 26,
+      "run_name": "20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top6",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D",
+        "EMPLOY_D",
+        "FREQ1_D",
+        "DETNLF_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": []
+    },
+    {
+      "run_id": 38,
+      "run_name": "20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "old_total_drift_top3",
+      "override_heads": [
+        "SERVICES_D",
+        "SUB1_D",
+        "FREQ_ATND_SELF_HELP_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 38,
+      "run_name": "20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 38,
+      "run_name": "20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_robust_top3",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ1_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    },
+    {
+      "run_id": 38,
+      "run_name": "20260519-153542__ctmp_gin_joint_fresh_id38__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3",
+      "fold": 0,
+      "head_set_name": "new_dvD_top6",
+      "override_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D",
+        "EMPLOY_D",
+        "FREQ1_D",
+        "DETNLF_D"
+      ],
+      "split": "valid",
+      "status": "ok",
+      "warnings": [
+        "missing cached_predictions/gnn_val_joint.pt",
+        "rebuilt cached_predictions/gnn_val_joint.pt from joint predictor cache payload"
+      ]
+    }
+  ]
+}

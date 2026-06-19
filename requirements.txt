@@ -1,0 +1,28 @@
+# --- core ---
+numpy
+pandas
+pyyaml
+tqdm
+requests
+python-dotenv
+
+# --- science / stats ---
+scikit-learn
+
+# --- viz ---
+matplotlib
+
+# parameter tuning
+optuna
+psycopg2-binary
+sqlalchemy
+
+# download raw_data
+gdown
+rclone
+
+# --- interpretability ---
+# captum
+
+# experiment logger
+# wandb

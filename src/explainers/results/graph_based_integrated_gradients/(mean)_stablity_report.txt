@@ -1,0 +1,366 @@
+=== Top 20 (mean ± std) ===
+ idx     name     mean      std  mean_minus_std  mean_plus_std       cv  rank_mean
+  18     RACE 0.003250 0.000088        0.003162       0.003338 0.027011          1
+  52   INHFLG 0.002166 0.000110        0.002056       0.002275 0.050602          2
+  38  COKEFLG 0.001814 0.000075        0.001739       0.001889 0.041314          3
+  46  AMPHFLG 0.001699 0.000079        0.001619       0.001778 0.046708          4
+  13      VET 0.001676 0.000148        0.001528       0.001825 0.088460          5
+  48  BENZFLG 0.001664 0.000067        0.001597       0.001731 0.040044          6
+  19   ETHNIC 0.001641 0.000139        0.001502       0.001779 0.084413          7
+  41  METHFLG 0.001584 0.000063        0.001521       0.001647 0.039921          8
+  56   REGION 0.001539 0.000092        0.001446       0.001631 0.060029          9
+  34  HLTHINS 0.001515 0.000054        0.001460       0.001569 0.035723         10
+  29    FREQ2 0.001240 0.000097        0.001143       0.001336 0.078133         11
+  49  TRNQFLG 0.001162 0.000047        0.001115       0.001209 0.040273         12
+  20   DETNLF 0.001136 0.000042        0.001093       0.001178 0.037248         13
+  45 MTHAMFLG 0.001010 0.000057        0.000953       0.001067 0.056303         14
+   7  ARRESTS 0.001006 0.000099        0.000908       0.001105 0.097913         15
+  59 CBSA2020 0.000987 0.000045        0.000942       0.001032 0.045797         16
+  43   PCPFLG 0.000959 0.000046        0.000913       0.001005 0.048299         17
+   1     EDUC 0.000911 0.000066        0.000845       0.000977 0.072337         18
+  25   ROUTE1 0.000878 0.000022        0.000856       0.000900 0.025080         19
+  39   MARFLG 0.000838 0.000013        0.000824       0.000851 0.015753         20
+
+=== Bottom 20 (mean ± std) ===
+ idx                name      mean      std  mean_minus_std  mean_plus_std       cv  rank_mean
+  36 FREQ_ATND_SELF_HELP  0.000000 0.000000        0.000000       0.000000      NaN         41
+  23                SUB2  0.000000 0.000000        0.000000       0.000000      NaN         42
+  15             DAYWAIT  0.000000 0.000000        0.000000       0.000000      NaN         43
+  58             ALCDRUG -0.000065 0.000077       -0.000142       0.000012 1.176566         44
+  24                SUB3 -0.000250 0.000048       -0.000297      -0.000202 0.191121         45
+  53              OTCFLG -0.000261 0.000019       -0.000280      -0.000242 0.071505         46
+  42            OPSYNFLG -0.000334 0.000038       -0.000372      -0.000296 0.114512         47
+  55            DIVISION -0.000349 0.000023       -0.000372      -0.000327 0.065136         48
+  54            OTHERFLG -0.000360 0.000075       -0.000435      -0.000284 0.209268         49
+  22                SUB1 -0.000376 0.000048       -0.000424      -0.000328 0.127451         50
+   6             NOPRIOR -0.000439 0.000034       -0.000472      -0.000405 0.076599         51
+   3            SERVICES -0.000492 0.000098       -0.000590      -0.000394 0.198491         52
+  47             STIMFLG -0.000567 0.000078       -0.000645      -0.000489 0.137974         53
+  40              HERFLG -0.000616 0.000027       -0.000643      -0.000589 0.043958         54
+  50             BARBFLG -0.000634 0.000044       -0.000678      -0.000590 0.069217         55
+  31            FRSTUSE1 -0.001026 0.000065       -0.001091      -0.000961 0.062995         56
+  26              ROUTE2 -0.001231 0.000079       -0.001311      -0.001152 0.064516         57
+  30               FREQ3 -0.001458 0.000063       -0.001521      -0.001395 0.043110         58
+  44             HALLFLG -0.001909 0.000046       -0.001955      -0.001862 0.024274         59
+  51            SEDHPFLG -0.002000 0.000091       -0.002090      -0.001909 0.045334         60
+
+Saved: /Users/jeong-yunseong/Documents/programming/Phase_2_public/src/explainers/results/global_importance_ad_42.csv
+
+=== Stability Report ===
+Spearman avg: 0.9931
+Spearman pairs: [((0, 1), 0.9939984679222107), ((0, 2), 0.9902195334434509), ((1, 2), 0.9949430823326111)]
+
+Top-k overlap/Jaccard (pairwise):
+  k=10
+    seeds(0,1) overlap=1.000  jaccard=1.000
+    seeds(0,2) overlap=1.000  jaccard=1.000
+    seeds(1,2) overlap=1.000  jaccard=1.000
+  k=20
+    seeds(0,1) overlap=0.950  jaccard=0.905
+    seeds(0,2) overlap=1.000  jaccard=1.000
+    seeds(1,2) overlap=0.950  jaccard=0.905
+  k=30
+    seeds(0,1) overlap=0.967  jaccard=0.935
+    seeds(0,2) overlap=0.933  jaccard=0.875
+    seeds(1,2) overlap=0.967  jaccard=0.935
+
+Top-k averages:
+  k=10 overlap_avg=1.000  jaccard_avg=1.000
+  k=20 overlap_avg=0.967  jaccard_avg=0.937
+  k=30 overlap_avg=0.956  jaccard_avg=0.915
+
+=== Unstable Variables Report (Top-20, seeds=3) ===
+Stable in Top-20 (appear in all seeds): 19
+Unstable in Top-20 (appear in some seeds): 2
+
+[Stable-in-TopK]
+    1 | EDUC
+    7 | ARRESTS
+   13 | VET
+   18 | RACE
+   19 | ETHNIC
+   20 | DETNLF
+   25 | ROUTE1
+   29 | FREQ2
+   34 | HLTHINS
+   38 | COKEFLG
+   41 | METHFLG
+   43 | PCPFLG
+   45 | MTHAMFLG
+   46 | AMPHFLG
+   48 | BENZFLG
+   49 | TRNQFLG
+   52 | INHFLG
+   56 | REGION
+   59 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+    2 | MARSTAT                        | 1/3 | 2
+   39 | MARFLG                         | 2/3 | 3
+
+[Most rank-unstable among vars appearing in Top-20] (top 20)
+    7 | ARRESTS                        | freq=3/3 | rank_range=5
+   13 | VET                            | freq=3/3 | rank_range=5
+   19 | ETHNIC                         | freq=3/3 | rank_range=5
+   25 | ROUTE1                         | freq=3/3 | rank_range=4
+   34 | HLTHINS                        | freq=3/3 | rank_range=4
+    1 | EDUC                           | freq=3/3 | rank_range=3
+   20 | DETNLF                         | freq=3/3 | rank_range=3
+   38 | COKEFLG                        | freq=3/3 | rank_range=3
+   39 | MARFLG                         | freq=2/3 | rank_range=3
+   48 | BENZFLG                        | freq=3/3 | rank_range=3
+   59 | CBSA2020                       | freq=3/3 | rank_range=3
+    2 | MARSTAT                        | freq=1/3 | rank_range=2
+   41 | METHFLG                        | freq=3/3 | rank_range=2
+   56 | REGION                         | freq=3/3 | rank_range=2
+   29 | FREQ2                          | freq=3/3 | rank_range=1
+   43 | PCPFLG                         | freq=3/3 | rank_range=1
+   49 | TRNQFLG                        | freq=3/3 | rank_range=1
+   18 | RACE                           | freq=3/3 | rank_range=0
+   45 | MTHAMFLG                       | freq=3/3 | rank_range=0
+   46 | AMPHFLG                        | freq=3/3 | rank_range=0
+
+=== Unstable Variables Report (Top-30, seeds=3) ===
+Stable in Top-30 (appear in all seeds): 28
+Unstable in Top-30 (appear in some seeds): 4
+
+[Stable-in-TopK]
+    1 | EDUC
+    2 | MARSTAT
+    5 | PSOURCE
+    7 | ARRESTS
+   11 | PREG
+   12 | GENDER
+   13 | VET
+   14 | LIVARAG
+   16 | DSMCRIT
+   17 | AGE
+   18 | RACE
+   19 | ETHNIC
+   20 | DETNLF
+   25 | ROUTE1
+   29 | FREQ2
+   34 | HLTHINS
+   38 | COKEFLG
+   39 | MARFLG
+   41 | METHFLG
+   43 | PCPFLG
+   45 | MTHAMFLG
+   46 | AMPHFLG
+   48 | BENZFLG
+   49 | TRNQFLG
+   52 | INHFLG
+   56 | REGION
+   57 | IDU
+   59 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+   10 | PSYPROB                        | 1/3 | 4
+   33 | FRSTUSE3                       | 1/3 | 3
+   32 | FRSTUSE2                       | 2/3 | 6
+    9 | METHUSE                        | 2/3 | 4
+
+[Most rank-unstable among vars appearing in Top-30] (top 20)
+   32 | FRSTUSE2                       | freq=2/3 | rank_range=6
+   13 | VET                            | freq=3/3 | rank_range=5
+    7 | ARRESTS                        | freq=3/3 | rank_range=5
+   19 | ETHNIC                         | freq=3/3 | rank_range=5
+   34 | HLTHINS                        | freq=3/3 | rank_range=4
+    9 | METHUSE                        | freq=2/3 | rank_range=4
+   10 | PSYPROB                        | freq=1/3 | rank_range=4
+   25 | ROUTE1                         | freq=3/3 | rank_range=4
+   59 | CBSA2020                       | freq=3/3 | rank_range=3
+   20 | DETNLF                         | freq=3/3 | rank_range=3
+   11 | PREG                           | freq=3/3 | rank_range=3
+    1 | EDUC                           | freq=3/3 | rank_range=3
+   33 | FRSTUSE3                       | freq=1/3 | rank_range=3
+   38 | COKEFLG                        | freq=3/3 | rank_range=3
+   39 | MARFLG                         | freq=3/3 | rank_range=3
+   48 | BENZFLG                        | freq=3/3 | rank_range=3
+   57 | IDU                            | freq=3/3 | rank_range=3
+   16 | DSMCRIT                        | freq=3/3 | rank_range=2
+    5 | PSOURCE                        | freq=3/3 | rank_range=2
+    2 | MARSTAT                        | freq=3/3 | rank_range=2
+
+=== Top 20 (mean ± std) ===
+ idx       name     mean      std  mean_minus_std  mean_plus_std       cv  rank_mean
+  14  LIVARAG_D 0.003829 0.000102        0.003727       0.003931 0.026562          1
+  18       RACE 0.003296 0.000095        0.003201       0.003391 0.028886          2
+   3 SERVICES_D 0.002923 0.000058        0.002865       0.002981 0.019811          3
+  52     INHFLG 0.002166 0.000110        0.002056       0.002275 0.050602          4
+  29    FREQ2_D 0.001971 0.000056        0.001915       0.002027 0.028523          5
+   7  ARRESTS_D 0.001863 0.000109        0.001754       0.001972 0.058711          6
+  38    COKEFLG 0.001848 0.000080        0.001768       0.001928 0.043050          7
+  28    FREQ1_D 0.001783 0.000027        0.001756       0.001811 0.015418          8
+   8   EMPLOY_D 0.001747 0.000094        0.001653       0.001841 0.053671          9
+  46    AMPHFLG 0.001699 0.000079        0.001619       0.001778 0.046708         10
+  48    BENZFLG 0.001698 0.000072        0.001626       0.001770 0.042325         11
+  13        VET 0.001676 0.000148        0.001528       0.001825 0.088460         12
+  19     ETHNIC 0.001641 0.000139        0.001502       0.001779 0.084413         13
+  41    METHFLG 0.001618 0.000070        0.001549       0.001688 0.042964         14
+  34    HLTHINS 0.001560 0.000055        0.001505       0.001616 0.035477         15
+  56     REGION 0.001539 0.000092        0.001446       0.001631 0.060029         16
+  20   DETNLF_D 0.001253 0.000064        0.001189       0.001317 0.051169         17
+  49    TRNQFLG 0.001162 0.000047        0.001115       0.001209 0.040273         18
+  45   MTHAMFLG 0.001010 0.000057        0.000953       0.001067 0.056303         19
+  43     PCPFLG 0.000993 0.000053        0.000941       0.001046 0.053152         20
+
+=== Bottom 20 (mean ± std) ===
+ idx                  name      mean      std  mean_minus_std  mean_plus_std        cv  rank_mean
+  22                SUB1_D  0.000003 0.000046       -0.000043       0.000049 15.166444         41
+  37                ALCFLG  0.000000 0.000000        0.000000       0.000000       NaN         42
+  15               DAYWAIT  0.000000 0.000000        0.000000       0.000000       NaN         43
+  36 FREQ_ATND_SELF_HELP_D  0.000000 0.000000        0.000000       0.000000       NaN         44
+  23                SUB2_D  0.000000 0.000000        0.000000       0.000000       NaN         45
+   0                STFIPS  0.000000 0.000000        0.000000       0.000000       NaN         46
+  58               ALCDRUG -0.000065 0.000077       -0.000142       0.000012  1.176566         47
+  53                OTCFLG -0.000261 0.000019       -0.000280      -0.000242  0.071505         48
+  42              OPSYNFLG -0.000334 0.000038       -0.000372      -0.000296  0.114512         49
+  55              DIVISION -0.000349 0.000023       -0.000372      -0.000327  0.065136         50
+   6               NOPRIOR -0.000439 0.000034       -0.000472      -0.000405  0.076599         51
+  24                SUB3_D -0.000468 0.000068       -0.000536      -0.000400  0.145030         52
+  47               STIMFLG -0.000567 0.000078       -0.000645      -0.000489  0.137974         53
+  40                HERFLG -0.000616 0.000027       -0.000643      -0.000589  0.043958         54
+  50               BARBFLG -0.000634 0.000044       -0.000678      -0.000590  0.069217         55
+  31              FRSTUSE1 -0.001026 0.000065       -0.001091      -0.000961  0.062995         56
+  26                ROUTE2 -0.001231 0.000079       -0.001311      -0.001152  0.064516         57
+  54              OTHERFLG -0.001548 0.000112       -0.001660      -0.001436  0.072350         58
+  44               HALLFLG -0.001909 0.000046       -0.001955      -0.001862  0.024274         59
+  51              SEDHPFLG -0.002000 0.000091       -0.002090      -0.001909  0.045334         60
+
+Saved: /Users/jeong-yunseong/Documents/programming/Phase_2_public/src/explainers/results/global_importance_dis_42.csv
+
+=== Stability Report ===
+Spearman avg: 0.9920
+Spearman pairs: [((0, 1), 0.9939984083175659), ((0, 2), 0.989108145236969), ((1, 2), 0.9928869009017944)]
+
+Top-k overlap/Jaccard (pairwise):
+  k=10
+    seeds(0,1) overlap=1.000  jaccard=1.000
+    seeds(0,2) overlap=0.800  jaccard=0.667
+    seeds(1,2) overlap=0.800  jaccard=0.667
+  k=20
+    seeds(0,1) overlap=0.950  jaccard=0.905
+    seeds(0,2) overlap=0.950  jaccard=0.905
+    seeds(1,2) overlap=1.000  jaccard=1.000
+  k=30
+    seeds(0,1) overlap=0.967  jaccard=0.935
+    seeds(0,2) overlap=0.967  jaccard=0.935
+    seeds(1,2) overlap=1.000  jaccard=1.000
+
+Top-k averages:
+  k=10 overlap_avg=0.867  jaccard_avg=0.778
+  k=20 overlap_avg=0.967  jaccard_avg=0.937
+  k=30 overlap_avg=0.978  jaccard_avg=0.957
+
+=== Unstable Variables Report (Top-20, seeds=3) ===
+Stable in Top-20 (appear in all seeds): 19
+Unstable in Top-20 (appear in some seeds): 2
+
+[Stable-in-TopK]
+    3 | SERVICES_D
+    7 | ARRESTS_D
+    8 | EMPLOY_D
+   13 | VET
+   14 | LIVARAG_D
+   18 | RACE
+   19 | ETHNIC
+   20 | DETNLF_D
+   28 | FREQ1_D
+   29 | FREQ2_D
+   34 | HLTHINS
+   38 | COKEFLG
+   41 | METHFLG
+   45 | MTHAMFLG
+   46 | AMPHFLG
+   48 | BENZFLG
+   49 | TRNQFLG
+   52 | INHFLG
+   56 | REGION
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+   59 | CBSA2020                       | 1/3 | 3
+   43 | PCPFLG                         | 2/3 | 2
+
+[Most rank-unstable among vars appearing in Top-20] (top 20)
+   13 | VET                            | freq=3/3 | rank_range=6
+   19 | ETHNIC                         | freq=3/3 | rank_range=5
+   28 | FREQ1_D                        | freq=3/3 | rank_range=5
+   34 | HLTHINS                        | freq=3/3 | rank_range=4
+   48 | BENZFLG                        | freq=3/3 | rank_range=4
+    7 | ARRESTS_D                      | freq=3/3 | rank_range=3
+    8 | EMPLOY_D                       | freq=3/3 | rank_range=3
+   38 | COKEFLG                        | freq=3/3 | rank_range=3
+   59 | CBSA2020                       | freq=1/3 | rank_range=3
+   43 | PCPFLG                         | freq=2/3 | rank_range=2
+   20 | DETNLF_D                       | freq=3/3 | rank_range=1
+   29 | FREQ2_D                        | freq=3/3 | rank_range=1
+   41 | METHFLG                        | freq=3/3 | rank_range=1
+   45 | MTHAMFLG                       | freq=3/3 | rank_range=1
+   49 | TRNQFLG                        | freq=3/3 | rank_range=1
+   56 | REGION                         | freq=3/3 | rank_range=1
+    3 | SERVICES_D                     | freq=3/3 | rank_range=0
+   14 | LIVARAG_D                      | freq=3/3 | rank_range=0
+   18 | RACE                           | freq=3/3 | rank_range=0
+   46 | AMPHFLG                        | freq=3/3 | rank_range=0
+
+=== Unstable Variables Report (Top-30, seeds=3) ===
+Stable in Top-30 (appear in all seeds): 29
+Unstable in Top-30 (appear in some seeds): 2
+
+[Stable-in-TopK]
+    1 | EDUC
+    2 | MARSTAT
+    3 | SERVICES_D
+    5 | PSOURCE
+    7 | ARRESTS_D
+    8 | EMPLOY_D
+   12 | GENDER
+   13 | VET
+   14 | LIVARAG_D
+   17 | AGE
+   18 | RACE
+   19 | ETHNIC
+   20 | DETNLF_D
+   25 | ROUTE1
+   28 | FREQ1_D
+   29 | FREQ2_D
+   30 | FREQ3_D
+   34 | HLTHINS
+   38 | COKEFLG
+   39 | MARFLG
+   41 | METHFLG
+   43 | PCPFLG
+   45 | MTHAMFLG
+   46 | AMPHFLG
+   48 | BENZFLG
+   49 | TRNQFLG
+   52 | INHFLG
+   56 | REGION
+   59 | CBSA2020
+
+[Unstable-in-TopK] (idx | name | freq | rank_range)
+   11 | PREG                           | 1/3 | 2
+   57 | IDU                            | 2/3 | 4
+
+[Most rank-unstable among vars appearing in Top-30] (top 20)
+   13 | VET                            | freq=3/3 | rank_range=6
+   28 | FREQ1_D                        | freq=3/3 | rank_range=5
+   19 | ETHNIC                         | freq=3/3 | rank_range=5
+   57 | IDU                            | freq=2/3 | rank_range=4
+   48 | BENZFLG                        | freq=3/3 | rank_range=4
+   34 | HLTHINS                        | freq=3/3 | rank_range=4
+   59 | CBSA2020                       | freq=3/3 | rank_range=3
+    8 | EMPLOY_D                       | freq=3/3 | rank_range=3
+   39 | MARFLG                         | freq=3/3 | rank_range=3
+   38 | COKEFLG                        | freq=3/3 | rank_range=3
+   30 | FREQ3_D                        | freq=3/3 | rank_range=3
+    7 | ARRESTS_D                      | freq=3/3 | rank_range=3
+    1 | EDUC                           | freq=3/3 | rank_range=2
+   25 | ROUTE1                         | freq=3/3 | rank_range=2
+   17 | AGE                            | freq=3/3 | rank_range=2
+    5 | PSOURCE                        | freq=3/3 | rank_range=2
+   11 | PREG                           | freq=1/3 | rank_range=2
+   43 | PCPFLG                         | freq=3/3 | rank_range=2
+    2 | MARSTAT                        | freq=3/3 | rank_range=2
+   20 | DETNLF_D                       | freq=3/3 | rank_range=1

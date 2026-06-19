@@ -1,0 +1,96 @@
+device: null
+
+run_name: ctmp_gin_forecast_discharge_los_ce_distribution_leakage_free
+
+forecasted_pipeline:
+  enabled: true
+  discharge_config_path: configs/discharge_predictor.yaml
+  los_config_path: configs/los_coarse_predictor.yaml
+  split:
+    train_core_ratio: 0.8
+    predictor_val_ratio: 0.1
+    gnn_val_ratio: 0.1
+    stratify_by: REASONb
+    stratify_aux: []
+  train_prediction_mode: oof
+  oof:
+    n_inner_folds: 5
+    use_fixed_predictor_hparams: true
+    use_fixed_best_epoch: true
+  eval_predictor:
+    mode: fold_final
+    train_scope: train_core
+    calibration_split: predictor_val
+  leakage_guard:
+    forbid_outer_test_in_predictor: true
+    forbid_outer_test_in_calibration: true
+    forbid_outer_test_in_gnn_selection: true
+    require_predictor_val_separate_from_gnn_val: true
+
+forecasted_discharge:
+  enabled: true
+  mode: hard
+  soft_discharge:
+    enabled: false
+    heads: all
+    temperature: 1.0
+    use_probs_cache: true
+    save_logits: true
+    save_probs: true
+    debug_forward_once: true
+
+forecasted_los:
+  enabled: true
+  target_mode: coarse
+  num_classes: 6
+  variant: baseline
+  return_type: distribution
+  probability_source: calibrated
+  temperature: null
+  output_offset: 1
+
+edge:
+  is_mi_based: True
+  n_neighbors: 3
+  top_k: 9
+  threshold: 0.02
+  pruning_ratio: 0.5
+  return_edge_attr: False
+  mi_cached: False
+
+model:
+  name: ctmp_gin
+  params:
+    embedding_dim: 16
+    forecast_input_encoder: distribution
+    distribution_encoder_hidden_dim: 64
+    distribution_encoder_out_dim: 16
+    gin_hidden_channel: 96
+    gin_1_layers: 2
+    gin_hidden_channel_2: 96
+    gin_2_layers: 2
+    train_eps: True
+    los_embedding_dim: 4
+    gate_hidden_ch: 64
+    dropout_p: 0.1242026370635674
+    readout_mode: "concat"
+
+train:
+  batch_size: 512
+  learning_rate: 0.0006103193737231391
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.2
+  num_workers: 4
+  optimizer: "adam"
+  weight_decay: 1.1058007626429544e-05
+  lr_scheduler_patience: 5
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  ig_label: False
+  do_preprocess: False  
+  cv: True
+  n_folds: 5

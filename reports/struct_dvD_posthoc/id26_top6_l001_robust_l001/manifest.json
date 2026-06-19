@@ -1,0 +1,141 @@
+{
+  "command_args": {
+    "runs_root": "runs",
+    "baseline_run_dir": "runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0",
+    "top6_run_dir": "runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0",
+    "robust_run_dir": "runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0",
+    "robust_run_name_contains": null,
+    "splits": [
+      "valid",
+      "test"
+    ],
+    "out_dir": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001",
+    "strict": false,
+    "risk_head_sets": [
+      "new_robust_top3",
+      "new_dvD_top6"
+    ],
+    "los_bin_schemes": [
+      "coarse6",
+      "breakdown9_true"
+    ]
+  },
+  "timestamp": "2026-06-15T09:22:41.607394+00:00",
+  "git_commit": "8bfd7fb1263ec2351b4e13a27eec05c33363a5a2",
+  "resolved_run_dirs": {
+    "baseline_id26": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0",
+    "struct_top6_l001": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0",
+    "struct_robust_top3_l003": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0"
+  },
+  "config_paths": {
+    "baseline_id26": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0/joint_predictor/config.final.yaml",
+    "struct_top6_l001": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/config.final.yaml",
+    "struct_robust_top3_l003": "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/config.final.yaml"
+  },
+  "run_names": [
+    "baseline_id26",
+    "struct_top6_l001",
+    "struct_robust_top3_l003"
+  ],
+  "split_names": [
+    "valid",
+    "test"
+  ],
+  "warnings": [
+    "baseline_id26 per-row downstream outcome predictions: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0/diagnostic_predictions.csv",
+    "struct_top6_l001 per-row downstream outcome predictions: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/diagnostic_predictions.csv",
+    "struct_robust_top3_l003 per-row downstream outcome predictions: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/diagnostic_predictions.csv",
+    "struct_robust_top3_l003 joint predictions valid: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/val_predictions.csv",
+    "struct_robust_top3_l003 joint predictions test: missing /Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/test_predictions.csv"
+  ],
+  "missing_files": [
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260519-041725__ctmp_gin_joint_fresh_id26__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2_lambda=0.3/folds/fold_0/diagnostic_predictions.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061835__ctmp_gin_joint_fresh_id26_struct_dvD_top6_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/diagnostic_predictions.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/diagnostic_predictions.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/val_predictions.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/runs/20260615-061634__ctmp_gin_joint_fresh_id26_struct_robust_top3_lambda001__bs=512__lr=6.10e-04__seed=1__cv=5__test=0.2/folds/fold_0/joint_predictor/test_predictions.csv"
+  ],
+  "struct_loss_settings": {
+    "baseline_id26": {
+      "run_name": "baseline_id26",
+      "struct_loss_enabled": false,
+      "lambda_struct": null,
+      "loss_type": null,
+      "risk_head_set": null,
+      "resolved_risk_heads": [],
+      "stopgrad_los": null,
+      "use_ema": null
+    },
+    "struct_top6_l001": {
+      "run_name": "struct_top6_l001",
+      "struct_loss_enabled": true,
+      "lambda_struct": 0.01,
+      "loss_type": "soft_js_d",
+      "risk_head_set": "new_dvD_top6",
+      "resolved_risk_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ2_D",
+        "EMPLOY_D",
+        "FREQ1_D",
+        "DETNLF_D"
+      ],
+      "stopgrad_los": true,
+      "use_ema": false
+    },
+    "struct_robust_top3_l003": {
+      "run_name": "struct_robust_top3_l003",
+      "struct_loss_enabled": true,
+      "lambda_struct": 0.01,
+      "loss_type": "soft_js_d",
+      "risk_head_set": "new_robust_top3",
+      "resolved_risk_heads": [
+        "FREQ_ATND_SELF_HELP_D",
+        "SUB1_D",
+        "FREQ1_D"
+      ],
+      "stopgrad_los": true,
+      "use_ema": false
+    }
+  },
+  "prediction_sources": {
+    "baseline_id26": {
+      "valid": "joint_prediction_csv",
+      "test": "joint_prediction_csv"
+    },
+    "struct_top6_l001": {
+      "valid": "joint_prediction_csv",
+      "test": "joint_prediction_csv"
+    },
+    "struct_robust_top3_l003": {
+      "valid": "missing",
+      "test": "missing"
+    }
+  },
+  "outcome_sources": {
+    "baseline_id26": "missing_outcome_predictions",
+    "struct_top6_l001": "missing_outcome_predictions",
+    "struct_robust_top3_l003": "missing_outcome_predictions"
+  },
+  "created_files": [
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/run_metrics_comparison.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/run_metrics_comparison.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/struct_loss_trace.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/struct_loss_summary.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/struct_loss_summary.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/head_drift_posthoc.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/risk_head_drift_comparison.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/drift_run_summary.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/drift_comparison.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/true_los_bin_outcome_metrics.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/pred_los_bin_outcome_metrics.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/long_stay_recall_comparison.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/los_bin_outcome_metrics.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/los_confusion_matrix.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/middle_to_long_flow.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/middle_to_long_flow.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/risk_head_accuracy_comparison.csv",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/risk_head_accuracy_comparison.md",
+    "/Users/jeong-yunseong/Documents/programming/Phase_2_public/reports/struct_dvD_posthoc/id26_top6_l001_robust_l001/decision_report.md"
+  ]
+}

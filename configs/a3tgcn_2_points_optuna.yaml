@@ -1,0 +1,45 @@
+#  python -m src.trainers.run_parameter_search_optuna_local \
+#      --config configs/a3tgcn_2_points_optuna.yaml \
+#      --n-trials 50 \
+#      --epochs 50
+
+# although mps is available, it is often better to use cpu
+# need is_copied on edge
+device: null # if null, it automatically sets the available device. (cuda | mps | cpu)
+            # it is often better to use cpu due to recurrent unit.
+
+edge:
+  is_mi_based: True # if 0, it generates fully connected edge index.
+  n_neighbors: 5 # NOTE: cv result of n_neighbors: 3
+  top_k: 12
+  threshold: 0.005
+  pruning_ratio: 0.7
+  return_edge_attr: False # CAUTION: potential error when set to True
+  mi_cached: True
+  cache_path: None
+
+model:
+  name: a3tgcn_2_points
+  params:
+    embedding_dim: 32
+    hidden_channel: 96
+
+train:
+  batch_size: 32
+  learning_rate: 0.001259230619853397 # optimizer learning rate
+  epochs: 100
+  seed: 1
+  binary: True
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 1
+  optimizer: "adamw"
+  weight_decay: 0.0004187848397843057
+  lr_scheduler_patience: 8
+  early_stopping_patience: 10
+  decision_threshold: 0.5
+  cv: True # kfold crosss validation
+  n_folds: 5
+
+  

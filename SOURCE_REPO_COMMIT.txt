@@ -1,0 +1,7 @@
+source repo path: /Users/jeong-yunseong/Documents/programming/Phase_2_public
+source branch: vastai
+source HEAD commit hash: 6d7a0e505248d9fe9a3a8dcd4794af1e446cf305
+source working tree dirty: yes
+included uncommitted files:
+- run_vast_cv.sh
+split created at: 2026-06-19 10:13:14 KST

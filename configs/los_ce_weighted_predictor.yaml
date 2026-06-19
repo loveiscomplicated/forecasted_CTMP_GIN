@@ -1,0 +1,39 @@
+device: null
+
+run_name: los_ce_weighted_predictor
+
+model:
+  name: los_ordinal_predictor
+  params:
+    embedding_dim: 32
+    hidden_dim: 512
+    num_layers: 4
+    dropout_p: 0.2
+
+loss:
+  type: ce
+  use_ce_class_weight: true
+  ce_class_weight_mode: inverse
+  ce_class_weight_clip: 10.0
+
+calibration:
+  enabled: false
+  export_val_predictions: false
+  export_test_predictions: true
+
+train:
+  batch_size: 1024
+  learning_rate: 1.0e-3
+  epochs: 50
+  seed: 1
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 3
+  lr_scheduler_patience: 5
+  early_stopping_patience: 6
+  optimizer: adamw
+  weight_decay: 1.0e-5
+  monitor_metric: valid_within_1_acc
+  monitor_mode: max
+  do_preprocess: false
