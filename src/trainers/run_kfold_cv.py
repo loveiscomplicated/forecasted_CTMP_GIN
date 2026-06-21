@@ -1019,14 +1019,22 @@ def run_single_fold(
         )
         start_epoch = 1
         if resume_from_last:
-            start_epoch = _restore_training_state_from_last_checkpoint(
-                fold_dir=fold_dir,
-                model=model,
-                optimizer=optimizer,
-                scheduler=scheduler,
-                logger=fold_logger,
-                device=device,
-            )
+            last_path = os.path.join(fold_dir, "checkpoints", "last.pt")
+            if os.path.exists(last_path):
+                start_epoch = _restore_training_state_from_last_checkpoint(
+                    fold_dir=fold_dir,
+                    model=model,
+                    optimizer=optimizer,
+                    scheduler=scheduler,
+                    logger=fold_logger,
+                    device=device,
+                )
+            else:
+                os.makedirs(os.path.join(fold_dir, "checkpoints"), exist_ok=True)
+                print(
+                    "[resume] checkpoint not found; using cached fold artifacts "
+                    f"and starting GNN from epoch 1: {last_path}"
+                )
 
         results = run_train_loop(
             model=model,
