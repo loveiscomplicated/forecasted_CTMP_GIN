@@ -12,7 +12,7 @@ from pathlib import Path
 DATASET_ID = "tedsd_2022"
 REMOTE_BASE = "gdrive:CTMP_GIN_mi_service"
 
-LOCAL_CACHE_DIR = Path("/workspace/CTMP_GIN/cache/mi_dict")
+LOCAL_CACHE_DIR = Path("/workspace/forecasted_CTMP_GIN/cache/mi_dict")
 # LOCAL_CACHE_DIR = Path(".") # for debugging
 LOCAL_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
