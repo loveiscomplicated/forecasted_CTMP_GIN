@@ -51,6 +51,9 @@ def get_mi_dict(train_df: pd.DataFrame, seed: int, mi_dict_path: str | None, n_n
     train_df = _remove_target(train_df)
     mi_dict = _get_mi_helper(train_df, seed, n_neighbors)
     if mi_dict_path is not None:
+        mi_dir = os.path.dirname(mi_dict_path)
+        if mi_dir:
+            os.makedirs(mi_dir, exist_ok=True)
         with open(mi_dict_path, 'wb') as f:
             pickle.dump(mi_dict, f)
     return mi_dict
