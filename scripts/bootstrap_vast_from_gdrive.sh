@@ -13,9 +13,9 @@ FOCAL_RUN_FILE_ID="$3"
 MISSING_CORRECTED_FILE_ID="${4:-}"
 
 WORKSPACE_ROOT="/workspace"
-REPO_URL="https://github.com/loveiscomplicated/CTMP_GIN.git"
-REPO_DIR="${WORKSPACE_ROOT}/CTMP_GIN"
-BRANCH="vastai"
+REPO_URL="https://github.com/loveiscomplicated/forecasted_CTMP_GIN.git"
+REPO_DIR="${WORKSPACE_ROOT}/forecasted_CTMP_GIN"
+BRANCH="main"
 
 CONDA_DIR="$HOME/miniconda3"
 CONDA_SH="${CONDA_DIR}/etc/profile.d/conda.sh"

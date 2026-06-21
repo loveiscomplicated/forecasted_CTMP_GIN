@@ -64,7 +64,7 @@ fi
 
 MODEL_NAME="forecast_diag_${REQUESTED_MODE}"
 WORKSPACE_ROOT="/workspace"
-REPO_DIR="${WORKSPACE_ROOT}/CTMP_GIN"
+REPO_DIR="${WORKSPACE_ROOT}/forecasted_CTMP_GIN"
 RUNS_DIR="${REPO_DIR}/runs"
 CONDA_DIR="$HOME/miniconda3"
 CONDA_SH="${CONDA_DIR}/etc/profile.d/conda.sh"

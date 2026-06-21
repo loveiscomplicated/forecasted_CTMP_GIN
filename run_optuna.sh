@@ -20,9 +20,9 @@ echo "config    : ${CONFIG_PATH}"
 # Constants
 # -----------------------
 WORKSPACE_ROOT="/workspace"
-REPO_URL="https://github.com/loveiscomplicated/CTMP_GIN.git"
-REPO_DIR="${WORKSPACE_ROOT}/CTMP_GIN"
-BRANCH="runpod"
+REPO_URL="https://github.com/loveiscomplicated/forecasted_CTMP_GIN.git"
+REPO_DIR="${WORKSPACE_ROOT}/forecasted_CTMP_GIN"
+BRANCH="main"
 
 CONDA_DIR="$HOME/miniconda3"
 CONDA_SH="${CONDA_DIR}/etc/profile.d/conda.sh"
@@ -365,7 +365,7 @@ if [[ -d "$PG_REAL_DATA" ]]; then
   rsync -av --no-owner --no-group "$PG_REAL_DATA/" /workspace/pgdata/
   tar -czf /workspace/pgdata_backup.tar.gz -C /workspace pgdata
 else
-  echo "[$(ts)] Warning: PG_REAL_DATA ($PG_REAL_DATA) not found. Skipping DB backup."
+  echo "[$(ts)] Warning: PG_REAL_DATA=$PG_REAL_DATA not found. Skipping DB backup."
 fi
 
 if [[ $ok -eq 0 ]]; then
